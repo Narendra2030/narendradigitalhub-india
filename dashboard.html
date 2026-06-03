@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NK Digital Hub Dashboard</title>
-
-<!-- Icons CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Dashboard - NK Digital Hub</title>
 
 <style>
 body{
 margin:0;
 font-family:Arial;
-background:#f4f6f9;
+background:linear-gradient(135deg,#e3f2fd,#fce4ec);
 }
 
-/* TOP BAR */
 .header{
 background:#003366;
 color:white;
@@ -23,141 +18,64 @@ padding:20px;
 text-align:center;
 }
 
-.header h1{
-margin:0;
-font-size:28px;
-}
-
-/* GRID */
-.container{
-max-width:1000px;
-margin:20px auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:10px;
-}
-
-/* CARD */
 .card{
 background:white;
+margin:15px;
 padding:20px;
-border-radius:12px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-transition:0.3s;
-text-align:center;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card i{
-font-size:35px;
-color:#003366;
-margin-bottom:10px;
-}
-
-.card h3{
-margin:10px 0;
-}
-
-/* CONTACT */
-.contact{
-max-width:1000px;
-margin:20px auto;
-background:white;
-padding:20px;
-border-radius:12px;
-text-align:center;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
 button{
-padding:10px 20px;
-border:none;
+padding:10px 15px;
 background:#003366;
 color:white;
-border-radius:8px;
-cursor:pointer;
-}
-
-button:hover{
-background:#0055aa;
+border:none;
+border-radius:6px;
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="header">
 <h1>NK Digital Hub Dashboard</h1>
-<p>Welcome to your professional panel</p>
 </div>
 
-<!-- CARDS -->
-<div class="container">
+<script>
+if(!localStorage.getItem("nk_login")){
+window.location.href="login.html";
+}
+</script>
 
 <div class="card">
-<i class="fa-solid fa-calculator"></i>
-<h3>Excel Services</h3>
-<p>Dashboards, formulas, MIS reports</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-file-word"></i>
-<h3>MS Word Services</h3>
-<p>Typing, formatting, projects</p>
+<h2>Welcome User</h2>
+<p>Access your services below</p>
 </div>
 
 <div class="card">
-<i class="fa-solid fa-user-graduate"></i>
-<h3>Online Coaching</h3>
-<p>Computer & exam guidance</p>
+<h3>📱 Contact</h3>
+<p>8218583290</p>
+<p>nk3560777@gmail.com</p>
+<p>Instagram: nk_calmbeing</p>
 </div>
 
 <div class="card">
-<i class="fa-solid fa-id-card"></i>
-<h3>Resume Writing</h3>
-<p>Professional CV creation</p>
+<h3>⚙️ Services</h3>
+<p>Excel | Word | CSC | Resume</p>
 </div>
 
 <div class="card">
-<i class="fa-solid fa-building-columns"></i>
-<h3>CSC Services</h3>
-<p>Online forms & registrations</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-headset"></i>
-<h3>Support</h3>
-<p>Quick customer help</p>
-</div>
-
-</div>
-
-<!-- CONTACT -->
-<div class="contact">
-<h2>Contact Info</h2>
-<p>📱 8218583290</p>
-<p>📧 nk3560777@gmail.com</p>
-<p>📸 Instagram: nk_calmbeing</p>
-
-<br>
 <button onclick="logout()">Logout</button>
 </div>
 
 <script>
 function logout(){
-window.location.href="login.html";
+localStorage.removeItem("nk_login");
+window.location.href="index.html";
 }
 </script>
 
 </body>
 </html>
-<div class="card">
-<i class="fa-brands fa-whatsapp"></i>
-<h3>Order on WhatsApp</h3>
-<p>Send your service request instantly</p>
-
-<button onclick="openWhatsApp()">Order Now</button>
-</div>
