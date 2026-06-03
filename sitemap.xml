@@ -1,8 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sitemap - NK Digital Hub</title>
+</head>
 
-<url>
-<loc>https://narendra2030.github.io/narendradigitalhub-india/</loc>
-</url>
+<body style="font-family:Arial">
 
-</urlset>
+<h1>NK Digital Hub Sitemap</h1>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+</ul>
+
+<p>© NK Digital Hub</p>
+
+</body>
+</html>
