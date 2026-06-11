@@ -1,134 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NK Digital Hub | Excel, Word, CSC Services</title>
+<title>NK Digital Hub Login</title>
 
 <style>
 body{
-margin:0;
 font-family:Arial;
-background:linear-gradient(135deg,#e0f7fa,#f3e5f5);
-color:#333;
+background:#f3f4f6;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
 
-/* HEADER */
-header{
-background:linear-gradient(90deg,#003366,#0066cc);
-color:white;
-padding:40px 20px;
-text-align:center;
-}
-
-header h1{
-margin:0;
-font-size:40px;
-letter-spacing:2px;
-}
-
-header p{
-margin-top:10px;
-font-size:18px;
-opacity:0.9;
-}
-
-/* SECTION */
-.container{
-max-width:1000px;
-margin:20px auto;
-padding:20px;
-}
-
-.card{
+.box{
 background:white;
-padding:20px;
-margin:15px 0;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-border-left:6px solid #0066cc;
-transition:0.3s;
+padding:30px;
+border-radius:15px;
+width:350px;
+box-shadow:0 0 15px rgba(0,0,0,.2);
 }
 
-.card:hover{
-transform:scale(1.02);
+input,button{
+width:100%;
+padding:12px;
+margin:8px 0;
 }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-padding:12px 20px;
-background:#0066cc;
+button{
+background:#2563eb;
 color:white;
-text-decoration:none;
-border-radius:8px;
-margin-top:10px;
+border:none;
+cursor:pointer;
 }
 
-.btn:hover{
-background:#003366;
-}
-
-/* FOOTER */
-footer{
-background:#003366;
-color:white;
+h2{
 text-align:center;
-padding:15px;
-margin-top:20px;
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
-<h1>NK DIGITAL HUB</h1>
-<p>Excel | Word | CSC | Resume | Online Coaching</p>
-</header>
+<div class="box">
+<h2>NK Digital Hub</h2>
 
-<div class="container">
+<input type="email" id="email" placeholder="Email">
 
-<div class="card">
-<h2>Welcome</h2>
-<p>
-NK Digital Hub provides professional digital services for students, job seekers and businesses.
-</p>
-</div>
+<input type="password" id="password" placeholder="Password">
 
-<div class="card">
-<h2>Our Services</h2>
-<p>✔ Microsoft Excel Services (Dashboards, Formulas)</p>
-<p>✔ MS Word Typing & Formatting</p>
-<p>✔ CSC & Online Services</p>
-<p>✔ Resume & CV Writing</p>
-<p>✔ Online Coaching</p>
-</div>
+<button onclick="signup()">Sign Up</button>
 
-<div class="card">
-<h2>Why Choose Us?</h2>
-<p>✔ Fast Service</p>
-<p>✔ Affordable Price</p>
-<p>✔ Professional Work</p>
-<p>✔ Trusted Support</p>
-</div>
+<button onclick="login()">Login</button>
 
-<div class="card">
-<h2>Contact Us</h2>
-<p>📱 8218583290</p>
-<p>📧 nk3560777@gmail.com</p>
-<p>📸 Instagram: nk_calmbeing</p>
-
-<a class="btn" href="login.html">Join / Login</a>
-</div>
+<p id="msg"></p>
 
 </div>
 
-<footer>
-<p>© 2026 NK Digital Hub | All Rights Reserved</p>
-</footer>
+<script type="module">
+
+import { initializeApp } from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+
+apiKey: "YOUR_API_KEY",
+
+authDomain: "YOUR_PROJECT.firebaseapp.com",
+
+projectId: "YOUR_PROJECT_ID",
+
+storageBucket: "YOUR_PROJECT.appspot.com",
+
+messagingSenderId: "XXXX",
+
+appId: "XXXX"
+
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.signup = function(){
+
+let email =
+document.getElementById("email").value;
+
+let password =
+document.getElementById("password").value;
+
+createUserWithEmailAndPassword(auth,email,password)
+.then(()=>{
+document.getElementById("msg").innerHTML =
+"Account Created Successfully";
+})
+.catch(error=>{
+document.getElementById("msg").innerHTML =
+error.message;
+});
+}
+
+window.login = function(){
+
+let email =
+document.getElementById("email").value;
+
+let password =
+document.getElementById("password").value;
+
+signInWithEmailAndPassword(auth,email,password)
+.then(()=>{
+window.location.href="dashboard.html";
+})
+.catch(error=>{
+document.getElementById("msg").innerHTML =
+error.message;
+});
+}
+
+</script>
 
 </body>
 </html>
