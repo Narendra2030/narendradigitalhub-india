@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>Login</title>
-
-<link rel="stylesheet"
-href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="form">
 
-<h2>User Login</h2>
+  <h2>User Login</h2>
 
-<input
-id="email"
-placeholder="Email">
+  <input
+    id="email"
+    type="email"
+    placeholder="Email">
 
-<input
-id="password"
-type="password"
-placeholder="Password">
+  <input
+    id="password"
+    type="password"
+    placeholder="Password">
 
-<button
-onclick="login()">
+  <button onclick="login()">
+    Login
+  </button>
 
-Login
+  <br><br>
 
-</button>
+  <a href="sign-up.html">
+    Create Account
+  </a>
 
-<a href="signup.html">
+  <p id="msg"></p>
 
-Create Account
+</div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>Create Account
 
 </a>
 
