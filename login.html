@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Login - NK Digital Hub</title>
+
+<title>Login</title>
+
+<link rel="stylesheet"
+href="style.css">
+
 </head>
 
-<body style="font-family:Arial;text-align:center;background:#f4f6f9">
+<body>
 
-<h2>NK Digital Hub Login</h2>
+<div class="form">
 
-<input id="user" placeholder="Username"><br><br>
-<input id="pass" type="password" placeholder="Password"><br><br>
+<h2>User Login</h2>
 
-<button onclick="login()">Login</button>
+<input
+id="email"
+placeholder="Email">
 
-<p>Only authorized users can access dashboard</p>
+<input
+id="password"
+type="password"
+placeholder="Password">
 
-<script>
-function login(){
+<button
+onclick="login()">
 
-let u = document.getElementById("user").value;
-let p = document.getElementById("pass").value;
+Login
 
-// SIMPLE DEMO LOGIN (you can change later)
-if(u==="nk" && p==="1234"){
-localStorage.setItem("nk_login","true");
-window.location.href="dashboard.html";
-}
-else{
-alert("Invalid Login");
-}
+</button>
 
-}
+<a href="signup.html">
+
+Create Account
+
+</a>
+
+<p id="msg"></p>
+
+</div>
+
+<script type="module"
+src="app.js">
+
 </script>
 
 </body>
+</html></body>
 </html>
