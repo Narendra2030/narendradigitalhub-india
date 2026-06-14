@@ -1,21 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Sitemap - NK Digital Hub</title>
-</head>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<body style="font-family:Arial">
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<h1>NK Digital Hub Sitemap</h1>
+<url>
+<loc>https://your-domain.com/</loc>
+<priority>1.0</priority>
+</url>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="login.html">Login</a></li>
-<li><a href="dashboard.html">Dashboard</a></li>
-</ul>
+<url>
+<loc>https://your-domain.com/login.html</loc>
+<priority>0.8</priority>
+</url>
 
-<p>© NK Digital Hub</p>
+<url>
+<loc>https://your-domain.com/signup.html</loc>
+<priority>0.8</priority>
+</url>
 
-</body>
-</html>
+<url>
+<loc>https://your-domain.com/dashboard.html</loc>
+<priority>0.7</priority>
+</url>
+
+</urlset>
