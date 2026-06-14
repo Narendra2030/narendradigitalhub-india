@@ -1,40 +1,239 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
 
-<link rel="stylesheet"
-href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dashboard</title>
+<title>Dashboard | NKDIGITALHUB2030</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f8fafc;
+}
+
+header{
+background:#0f172a;
+padding:25px;
+text-align:center;
+}
+
+.logo{
+font-size:38px;
+font-weight:bold;
+}
+
+.nk{color:#2563eb;}
+.digital{color:#7c3aed;}
+.hub{color:#10b981;}
+.y2030{color:#f59e0b;}
+
+.header-text{
+color:white;
+margin-top:8px;
+}
+
+nav{
+background:#1e293b;
+padding:14px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:14px;
+}
+
+.container{
+padding:40px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.cards{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+.card h3{
+margin-top:0;
+}
+
+.card p{
+color:#666;
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:10px;
+
+padding:10px 18px;
+
+background:#2563eb;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+}
+
+footer{
+
+margin-top:40px;
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<h1>
+<header>
 
-Welcome User
+<div class="logo">
 
-</h1>
+<span class="nk">NK</span>
+<span class="digital">DIGITAL</span>
+<span class="hub">HUB</span>
+<span class="y2030">2030</span>
+
+</div>
+
+<p class="header-text">
+
+Dashboard Panel
+
+</p>
+
+</header>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="#">Services</a>
+
+<a href="#">Profile</a>
+
+<a href="#">Settings</a>
+
+<a href="login.html">Logout</a>
+
+</nav>
+
+<div class="container">
+
+<h2 align="center">
+
+Welcome to Dashboard
+
+</h2>
+
+<div class="cards">
 
 <div class="card">
 
-⭐ Special Feature
+<h3>Digital Services</h3>
+
+<p>
+Access platform services
+</p>
+
+<a class="btn" href="#">
+Open
+</a>
 
 </div>
 
 <div class="card">
 
-Premium Section
+<h3>Learning</h3>
+
+<p>
+Explore resources
+</p>
+
+<a class="btn" href="#">
+View
+</a>
 
 </div>
 
-<a href="index.html">
+<div class="card">
 
-Back Home
+<h3>Updates</h3>
 
+<p>
+Check announcements
+</p>
+
+<a class="btn" href="#">
+Read
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Account</h3>
+
+<p>
+Manage profile
+</p>
+
+<a class="btn" href="#">
+Manage
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 NKDIGITALHUB2030
+
+</footer>
+
+</body>
+
+</html>
 </a>
 
 </body>
