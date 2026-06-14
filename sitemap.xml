@@ -1,26 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
+# NKDIGITALHUB2030
 
-<urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+Modern digital platform for technology, learning, and online services.
 
-<url>
-<loc>https://your-domain.com/</loc>
-<priority>1.0</priority>
-</url>
+## Files
 
-<url>
-<loc>https://your-domain.com/login.html</loc>
-<priority>0.8</priority>
-</url>
+- index.html
+- login.html
+- signup.html
+- dashboard.html
+- style.css
+- sitemap.xml
+- README.md
 
-<url>
-<loc>https://your-domain.com/signup.html</loc>
-<priority>0.8</priority>
-</url>
+## Features
 
-<url>
-<loc>https://your-domain.com/dashboard.html</loc>
-<priority>0.7</priority>
-</url>
+- Responsive Design
+- User Dashboard
+- Clean Interface
+- Easy Navigation
 
-</urlset>
+## Built With
+
+- HTML
+- CSS
+
+## Author
+
+NKDIGITALHUB2030
+
+## License
+
+© 2026 NKDIGITALHUB2030  
+All Rights Reserved.
