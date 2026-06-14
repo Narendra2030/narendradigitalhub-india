@@ -1,40 +1,187 @@
-body{
+/* NKDIGITALHUB2030 */
 
+*{
 margin:0;
-
-font-family:Arial;
-
-background:#f4f4f4;
-
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
+body{
+background:#f8fafc;
+color:#222;
+}
+
+/* HEADER */
+
 header{
+background:#0f172a;
+padding:40px 20px;
+text-align:center;
+}
 
-background:#2563eb;
+.logo{
+font-size:40px;
+font-weight:bold;
+}
 
-padding:15px;
+.nk{
+color:#2563eb;
+}
 
+.digital{
+color:#7c3aed;
+}
+
+.hub{
+color:#10b981;
+}
+
+.y2030{
+color:#f59e0b;
+}
+
+.tagline,
+.header-text,
+.subtitle{
 color:white;
+margin-top:10px;
+}
 
+/* NAVIGATION */
+
+nav{
+background:#1e293b;
+padding:15px;
+text-align:center;
 }
 
 nav a{
-
 color:white;
-
-margin:10px;
-
 text-decoration:none;
+margin:12px;
+}
+
+nav a:hover{
+opacity:.8;
+}
+
+/* CONTENT */
+
+section,
+.container{
+padding:50px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
 
 }
 
-.hero{
+.card{
 
-padding:40px;
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 6px 20px rgba(0,0,0,.08);
 
 text-align:center;
 
 }
+
+/* FORM */
+
+.login-box,
+.signup-box{
+
+background:white;
+
+padding:40px;
+
+width:340px;
+
+border-radius:12px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+text-align:center;
+
+margin:auto;
+
+margin-top:60px;
+
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+}
+
+button,
+.btn{
+
+display:inline-block;
+
+width:100%;
+
+padding:12px;
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+text-decoration:none;
+
+cursor:pointer;
+
+}
+
+button:hover,
+.btn:hover{
+
+opacity:.9;
+
+}
+
+/* FOOTER */
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:40px;
+
+}}
 
 .btn{
 
