@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Online Classes | NK Digital Hub</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+
+      <a href="index.html" class="logo">
+        🌟 NK Digital Hub
+      </a>
+
+      <nav class="nav-menu">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="dashboard.html">
+          Dashboard
+        </a>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="logout()"
+        >
+          Logout
+        </button>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ONLINE CLASSES -->
+  <main>
+
+    <section class="dashboard-section">
+
+      <div class="container">
+
+        <div class="dashboard-header">
+
+          <span class="dashboard-badge">
+            🎓 Online Learning
+          </span>
+
+          <h1>
+            Online Classes
+          </h1>
+
+          <p>
+            Explore classes and educational content available on NK Digital Hub.
+          </p>
+
+        </div>
+
+
+        <!-- CLASS CARDS -->
+        <div class="dashboard-grid">
+
+
+          <!-- CLASS 1 TO 5 -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+              📘
+            </div>
+
+            <h2>
+              Classes 1 to 5
+            </h2>
+
+            <p>
+              Basic learning content, subject-wise study material and educational resources.
+            </p>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Classes 1 to 5 content will be available soon.')"
+            >
+              Explore
+            </button>
+
+          </div>
+
+
+          <!-- CLASS 6 TO 8 -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+              📚
+            </div>
+
+            <h2>
+              Classes 6 to 8
+            </h2>
+
+            <p>
+              Subject-wise learning content for middle school students.
+            </p>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Classes 6 to 8 content will be available soon.')"
+            >
+              Explore
+            </button>
+
+          </div>
+
+
+          <!-- CLASS 9 TO 10 -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+              📝
+            </div>
+
+            <h2>
+              Classes 9 to 10
+            </h2>
+
+            <p>
+              School-level study resources and subject-wise educational content.
+            </p>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Classes 9 to 10 content will be available soon.')"
+            >
+              Explore
+            </button>
+
+          </div>
+
+
+          <!-- CLASS 11 TO 12 -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+              🔬
+            </div>
+
+            <h2>
+              Classes 11 to 12
+            </h2>
+
+            <p>
+              Higher secondary learning content including PCB-related subjects.
+            </p>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Classes 11 to 12 content will be available soon.')"
+            >
+              Explore
+            </button>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- BACK -->
+        <div class="hero-buttons">
+
+          <a
+            href="dashboard.html"
+            class="btn btn-primary"
+          >
+            ← Back to Dashboard
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FIREBASE APP -->
+  <script
+    type="module"
+    src="app.js"
+  ></script>
+
+</body>
+</html>
