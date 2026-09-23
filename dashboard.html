@@ -1,287 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | NK Digital Hub</title>
 
-<title>Dashboard | NKDIGITALHUB2030</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f8fafc;
-}
-
-header{
-background:#0f172a;
-padding:25px;
-text-align:center;
-}
-
-.logo{
-font-size:38px;
-font-weight:bold;
-}
-
-.nk{color:#2563eb;}
-.digital{color:#7c3aed;}
-.hub{color:#10b981;}
-.y2030{color:#f59e0b;}
-
-.header-text{
-color:white;
-margin-top:8px;
-}
-
-nav{
-background:#1e293b;
-padding:14px;
-text-align:center;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:14px;
-}
-
-.container{
-padding:40px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.cards{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-
-background:white;
-
-padding:25px;
-
-border-radius:12px;
-
-box-shadow:0 6px 20px rgba(0,0,0,.08);
-
-text-align:center;
-
-}
-
-.card h3{
-margin-top:0;
-}
-
-.card p{
-color:#666;
-}
-
-.btn{
-
-display:inline-block;
-
-margin-top:10px;
-
-padding:10px 18px;
-
-background:#2563eb;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:8px;
-
-}
-
-footer{
-
-margin-top:40px;
-
-background:#0f172a;
-
-color:white;
-
-text-align:center;
-
-padding:20px;
-
-}
-
-</style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+  <!-- Header -->
+  <header class="site-header">
 
-<div class="logo">
+    <div class="container nav-container">
 
-<span class="nk">NK</span>
-<span class="digital">DIGITAL</span>
-<span class="hub">HUB</span>
-<span class="y2030">2030</span>
+      <a href="index.html" class="logo">
+        🌟 NK Digital Hub
+      </a>
 
-</div>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="logout()"
+        >
+          Logout
+        </button>
+      </nav>
 
-<p class="header-text">
+    </div>
 
-Dashboard Panel
+  </header>
 
-</p>
 
-</header>
+  <!-- Dashboard -->
+  <main>
 
-<nav>
+    <section class="dashboard-section">
 
-<a href="index.html">Home</a>
+      <div class="container">
 
-<a href="#">Services</a>
+        <div class="dashboard-header">
 
-<a href="#">Profile</a>
+          <span class="dashboard-badge">
+            🔐 Member Area
+          </span>
 
-<a href="#">Settings</a>
+          <h1>Welcome to Your Dashboard</h1>
 
-<a href="login.html">Logout</a>
+          <p>
+            You are successfully logged in to NK Digital Hub.
+          </p>
 
-</nav>
+          <p>
+            Logged in as:
+            <strong id="userEmail">Loading...</strong>
+          </p>
 
-<div class="container">
+        </div>
 
-<h2 align="center">
 
-Welcome to Dashboard
+        <!-- Dashboard Cards -->
+        <div class="dashboard-grid">
 
-</h2>
 
-<div class="cards">
+          <!-- Profile -->
+          <div class="dashboard-card">
 
-<div class="card">
+            <div class="dashboard-icon">
+              👤
+            </div>
 
-<h3>Digital Services</h3>
+            <h2>My Profile</h2>
 
-<p>
-Access platform services
-</p>
+            <p>
+              View your account information.
+            </p>
 
-<a class="btn" href="#">
-Open
-</a>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Profile section will be available soon.')"
+            >
+              Open Profile
+            </button>
 
-</div>
+          </div>
 
-<div class="card">
 
-<h3>Learning</h3>
+          <!-- Online Classes -->
+          <div class="dashboard-card">
 
-<p>
-Explore resources
-</p>
+            <div class="dashboard-icon">
+              🎓
+            </div>
 
-<a class="btn" href="#">
-View
-</a>
+            <h2>Online Classes</h2>
 
-</div>
+            <p>
+              Access online learning content for students.
+            </p>
 
-<div class="card">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Online Classes will be available soon.')"
+            >
+              Open Classes
+            </button>
 
-<h3>Updates</h3>
+          </div>
 
-<p>
-Check announcements
-</p>
 
-<a class="btn" href="#">
-Read
-</a>
+          <!-- Study Material -->
+          <div class="dashboard-card">
 
-</div>
+            <div class="dashboard-icon">
+              📚
+            </div>
 
-<div class="card">
+            <h2>Study Material</h2>
 
-<h3>Account</h3>
+            <p>
+              Access subject-wise study material.
+            </p>
 
-<p>
-Manage profile
-</p>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Study Material will be available soon.')"
+            >
+              Open Material
+            </button>
 
-<a class="btn" href="#">
-Manage
-</a>
+          </div>
 
-</div>
 
-</div>
+          <!-- Special Content -->
+          <div class="dashboard-card">
 
-</div>
+            <div class="dashboard-icon">
+              ⭐
+            </div>
 
-<footer>
+            <h2>Special Content</h2>
 
-© 2026 NKDIGITALHUB2030
+            <p>
+              Special educational content for Classes 1 to 12.
+            </p>
 
-</footer>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Special Content will be available soon.')"
+            >
+              Explore Content
+            </button>
 
-</body>
+          </div>
 
-</html>
-</a>
 
-</body>
+          <!-- Downloads -->
+          <div class="dashboard-card">
 
-</html></style>
+            <div class="dashboard-icon">
+              📥
+            </div>
 
-</head>
+            <h2>Downloads</h2>
 
-<body>
+            <p>
+              Access available documents and downloadable resources.
+            </p>
 
-<div class="header">
-<h1>NK Digital Hub Dashboard</h1>
-</div>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Downloads will be available soon.')"
+            >
+              View Downloads
+            </button>
 
-<script>
-if(!localStorage.getItem("nk_login")){
-window.location.href="login.html";
-}
-</script>
+          </div>
 
-<div class="card">
-<h2>Welcome User</h2>
-<p>Access your services below</p>
-</div>
 
-<div class="card">
-<h3>📱 Contact</h3>
-  <p><strong>Name:</strong> Narendra Kumar</p>
-<p>8218583290</p>
-<p>nk3560777@gmail.com</p>
-<p>Instagram: nk_calmbeing</p>
-</div>
+          <!-- Online Services -->
+          <div class="dashboard-card">
 
-<div class="card">
-<h3>⚙️ Services</h3>
-<p>Excel | Word | CSC | Resume</p>
-</div>
+            <div class="dashboard-icon">
+              💼
+            </div>
 
-<div class="card">
-<button onclick="logout()">Logout</button>
-</div>
+            <h2>Online Services</h2>
 
-<script>
-function logout(){
-localStorage.removeItem("nk_login");
-window.location.href="index.html";
-}
-</script>
+            <p>
+              Form-filling assistance, data entry and client-based online work.
+            </p>
 
-</body>
-</html>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="alert('Online Services will be available soon.')"
+            >
+              View Services
+            </button>
+
+          </div>
+
+
+          <!-- Contact -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+              📩
+            </div>
+
+            <h2>Contact</h2>
+
+            <p>
+              Contact NK Digital Hub for more information.
+            </p>
+
+            <a
+              href="mailto:Nk3560777@gmail.com"
+              class="btn btn-secondary"
+            >
+              Contact Me
+            </a>
+
+          </div>
+
+
+          <!-- Instagram -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+              📱
+            </div>
+
+            <h2>Follow on Instagram</h2>
+
+            <p>
+              Follow NK Digital Hub for updates and information.
+            </p>
+
+            <a
+              href="https://www.instagram.com/Nk_calming/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              Follow Instagram
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Logout -->
+        <div class="dashboard-logout">
+
+          <button
+            type="button"
+            class="
