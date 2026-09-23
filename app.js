@@ -1,8 +1,3 @@
-// ========================================
-// NK DIGITAL HUB
-// Firebase Authentication
-// ========================================
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 import {
@@ -14,9 +9,9 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
-// ========================================
-// FIREBASE CONFIG
-// ========================================
+/* =========================
+   FIREBASE CONFIG
+========================= */
 
 const firebaseConfig = {
   apiKey: "AIzaSyCIjsySkhok2u7qzFgMHqK9wfULrKgsYvY",
@@ -29,17 +24,17 @@ const firebaseConfig = {
 };
 
 
-// ========================================
-// INITIALIZE FIREBASE
-// ========================================
+/* =========================
+   INITIALIZE FIREBASE
+========================= */
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
-// ========================================
-// SIGN UP
-// ========================================
+/* =========================
+   SIGN UP
+========================= */
 
 window.signup = async function () {
 
@@ -52,19 +47,32 @@ window.signup = async function () {
   const email = emailInput.value.trim();
   const password = passwordInput.value;
 
+
   if (email === "" || password === "") {
-    if (msg) msg.textContent = "Please enter email and password.";
+
+    if (msg) {
+      msg.textContent = "Please enter email and password.";
+    }
+
     return;
   }
 
+
   if (password.length < 6) {
-    if (msg) msg.textContent = "Password must be at least 6 characters.";
+
+    if (msg) {
+      msg.textContent = "Password must be at least 6 characters.";
+    }
+
     return;
   }
+
 
   try {
 
-    if (msg) msg.textContent = "Creating account...";
+    if (msg) {
+      msg.textContent = "Creating account...";
+    }
 
     await createUserWithEmailAndPassword(
       auth,
@@ -72,13 +80,18 @@ window.signup = async function () {
       password
     );
 
+
     if (msg) {
       msg.textContent = "Account created successfully!";
     }
 
+
     setTimeout(() => {
+
       window.location.href = "dashboard.html";
+
     }, 800);
+
 
   } catch (error) {
 
@@ -87,13 +100,15 @@ window.signup = async function () {
     if (msg) {
       msg.textContent = getFirebaseError(error);
     }
+
   }
+
 };
 
 
-// ========================================
-// LOGIN
-// ========================================
+/* =========================
+   LOGIN
+========================= */
 
 window.login = async function () {
 
@@ -106,14 +121,23 @@ window.login = async function () {
   const email = emailInput.value.trim();
   const password = passwordInput.value;
 
+
   if (email === "" || password === "") {
-    if (msg) msg.textContent = "Please enter email and password.";
+
+    if (msg) {
+      msg.textContent = "Please enter email and password.";
+    }
+
     return;
   }
 
+
   try {
 
-    if (msg) msg.textContent = "Logging in...";
+    if (msg) {
+      msg.textContent = "Logging in...";
+    }
+
 
     await signInWithEmailAndPassword(
       auth,
@@ -121,13 +145,18 @@ window.login = async function () {
       password
     );
 
+
     if (msg) {
       msg.textContent = "Login successful!";
     }
 
+
     setTimeout(() => {
+
       window.location.href = "dashboard.html";
+
     }, 500);
+
 
   } catch (error) {
 
@@ -136,13 +165,15 @@ window.login = async function () {
     if (msg) {
       msg.textContent = getFirebaseError(error);
     }
+
   }
+
 };
 
 
-// ========================================
-// LOGOUT
-// ========================================
+/* =========================
+   LOGOUT
+========================= */
 
 window.logout = async function () {
 
@@ -154,42 +185,71 @@ window.logout = async function () {
 
   } catch (error) {
 
-    console.error("Logout error:", error);
+    console.error(
+      "Logout error:",
+      error
+    );
+
   }
+
 };
 
 
-// ========================================
-// AUTHENTICATION STATE
-// ========================================
+/* =========================
+   AUTH STATE
+========================= */
 
 onAuthStateChanged(auth, (user) => {
 
   const currentPage =
-    window.location.pathname.split("/").pop().toLowerCase();
+    window.location.pathname
+      .split("/")
+      .pop()
+      .toLowerCase();
 
-  // Dashboard protection
-  if (currentPage === "dashboard.html") {
+
+  /*
+    Dashboard AND Profile
+    require login
+  */
+
+  if (
+    currentPage === "dashboard.html" ||
+    currentPage === "profile.html"
+  ) {
 
     if (!user) {
+
       window.location.href = "login.html";
+
       return;
     }
+
+
+    /*
+      Show registered email
+      on Dashboard and Profile
+    */
 
     const userEmail =
       document.getElementById("userEmail");
 
+
     if (userEmail) {
-      userEmail.textContent = user.email;
+
+      userEmail.textContent =
+        user.email || "Email not available";
+
     }
+
   }
 
 });
 
 
-// ========================================
-// FIREBASE ERROR MESSAGE
-// ========================================
+/* =========================
+   FIREBASE ERROR MESSAGES
+========================= */
 
 function getFirebaseError(error) {
 
@@ -199,27 +259,4 @@ function getFirebaseError(error) {
       return "This email is already registered.";
 
     case "auth/invalid-email":
-      return "Please enter a valid email address.";
-
-    case "auth/weak-password":
-      return "Password must be at least 6 characters.";
-
-    case "auth/invalid-credential":
-      return "Invalid email or password.";
-
-    case "auth/user-not-found":
-      return "No account found with this email.";
-
-    case "auth/wrong-password":
-      return "Incorrect password.";
-
-    case "auth/too-many-requests":
-      return "Too many attempts. Please try again later.";
-
-    case "auth/network-request-failed":
-      return "Network error. Please check your internet connection.";
-
-    default:
-      return "Something went wrong. Please try again.";
-  }
-}
+      return "Please enter a valid email address
