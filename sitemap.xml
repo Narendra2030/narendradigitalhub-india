@@ -1,34 +1,28 @@
-# NKDIGITALHUB2030
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-Modern digital platform for technology, learning, and online services.
+  <url>
+    <loc>https://narendra2030.github.io/narendradigitalhub-india/</loc>
+  </url>
 
-## Files
+  <url>
+    <loc>https://narendra2030.github.io/narendradigitalhub-india/login.html</loc>
+  </url>
 
-- index.html
-- login.html
-- signup.html
-- dashboard.html
-- style.css
-- sitemap.xml
-- README.md
+  <url>
+    <loc>https://narendra2030.github.io/narendradigitalhub-india/signup.html</loc>
+  </url>
 
-## Features
+  <url>
+    <loc>https://narendra2030.github.io/narendradigitalhub-india/dashboard.html</loc>
+  </url>
 
-- Responsive Design
-- User Dashboard
-- Clean Interface
-- Easy Navigation
+  <url>
+    <loc>https://narendra2030.github.io/narendradigitalhub-india/profile.html</loc>
+  </url>
 
-## Built With
+  <url>
+    <loc>https://narendra2030.github.io/narendradigitalhub-india/online-classes.html</loc>
+  </url>
 
-- HTML
-- CSS
-
-## Author
-
-NKDIGITALHUB2030
-
-## License
-
-© 2026 NKDIGITALHUB2030  
-All Rights Reserved.
+</urlset>
