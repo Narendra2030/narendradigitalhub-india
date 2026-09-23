@@ -11,9 +11,8 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
-
     <div class="container nav-container">
 
       <a href="index.html" class="logo">
@@ -21,7 +20,11 @@
       </a>
 
       <nav class="nav-menu">
-        <a href="index.html">Home</a>
+
+        <a href="index.html">
+          Home
+        </a>
+
         <button
           type="button"
           class="btn btn-primary"
@@ -29,79 +32,83 @@
         >
           Logout
         </button>
+
       </nav>
 
     </div>
-
   </header>
 
 
-  <!-- Dashboard -->
+  <!-- DASHBOARD -->
   <main>
 
     <section class="dashboard-section">
 
       <div class="container">
 
+        <!-- DASHBOARD HEADER -->
         <div class="dashboard-header">
 
           <span class="dashboard-badge">
-            🔐 Member Area
+            🔐 Member Dashboard
           </span>
 
-          <h1>Welcome to Your Dashboard</h1>
-
-          <p>
-            You are successfully logged in to NK Digital Hub.
-          </p>
+          <h1>
+            Welcome to Your Dashboard
+          </h1>
 
           <p>
             Logged in as:
-            <strong id="userEmail">Loading...</strong>
+            <strong id="userEmail">
+              Loading...
+            </strong>
           </p>
 
         </div>
 
 
-        <!-- Dashboard Cards -->
+        <!-- DASHBOARD CARDS -->
         <div class="dashboard-grid">
 
 
-          <!-- Profile -->
+          <!-- MY PROFILE -->
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
               👤
             </div>
 
-            <h2>My Profile</h2>
+            <h2>
+              My Profile
+            </h2>
 
             <p>
-              View your account information.
+              View your account information and registered email.
             </p>
 
-            <button
-              type="button"
+            <a
+              href="profile.html"
               class="btn btn-secondary"
-              onclick="alert('Profile section will be available soon.')"
             >
               Open Profile
-            </button>
+            </a>
 
           </div>
 
 
-          <!-- Online Classes -->
+          <!-- ONLINE CLASSES -->
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
               🎓
             </div>
 
-            <h2>Online Classes</h2>
+            <h2>
+              Online Classes
+            </h2>
 
             <p>
-              Access online learning content for students.
+              Access online classes and educational content.
             </p>
 
             <button
@@ -115,17 +122,19 @@
           </div>
 
 
-          <!-- Study Material -->
+          <!-- STUDY MATERIAL -->
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
               📚
             </div>
 
-            <h2>Study Material</h2>
+            <h2>
+              Study Material
+            </h2>
 
             <p>
-              Access subject-wise study material.
+              Access notes, study material and learning resources.
             </p>
 
             <button
@@ -133,23 +142,25 @@
               class="btn btn-secondary"
               onclick="alert('Study Material will be available soon.')"
             >
-              Open Material
+              View Material
             </button>
 
           </div>
 
 
-          <!-- Special Content -->
+          <!-- SPECIAL CONTENT -->
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
               ⭐
             </div>
 
-            <h2>Special Content</h2>
+            <h2>
+              Special Content
+            </h2>
 
             <p>
-              Special educational content for Classes 1 to 12.
+              Members can access special and exclusive content.
             </p>
 
             <button
@@ -157,23 +168,25 @@
               class="btn btn-secondary"
               onclick="alert('Special Content will be available soon.')"
             >
-              Explore Content
+              Open Content
             </button>
 
           </div>
 
 
-          <!-- Downloads -->
+          <!-- DOWNLOADS -->
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
               📥
             </div>
 
-            <h2>Downloads</h2>
+            <h2>
+              Downloads
+            </h2>
 
             <p>
-              Access available documents and downloadable resources.
+              Download available documents and useful resources.
             </p>
 
             <button
@@ -181,23 +194,25 @@
               class="btn btn-secondary"
               onclick="alert('Downloads will be available soon.')"
             >
-              View Downloads
+              Open Downloads
             </button>
 
           </div>
 
 
-          <!-- Online Services -->
+          <!-- ONLINE SERVICES -->
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
-              💼
+              💻
             </div>
 
-            <h2>Online Services</h2>
+            <h2>
+              Online Services
+            </h2>
 
             <p>
-              Form-filling assistance, data entry and client-based online work.
+              Explore available online assistance and services.
             </p>
 
             <button
@@ -211,40 +226,44 @@
           </div>
 
 
-          <!-- Contact -->
+          <!-- CONTACT -->
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
-              📩
+              📧
             </div>
 
-            <h2>Contact</h2>
+            <h2>
+              Contact
+            </h2>
 
             <p>
-              Contact NK Digital Hub for more information.
+              Contact NK Digital Hub through email.
             </p>
 
             <a
               href="mailto:Nk3560777@gmail.com"
               class="btn btn-secondary"
             >
-              Contact Me
+              Contact Us
             </a>
 
           </div>
 
 
-          <!-- Instagram -->
+          <!-- INSTAGRAM -->
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
-              📱
+              📸
             </div>
 
-            <h2>Follow on Instagram</h2>
+            <h2>
+              Instagram
+            </h2>
 
             <p>
-              Follow NK Digital Hub for updates and information.
+              Follow NK Digital Hub on Instagram.
             </p>
 
             <a
@@ -253,17 +272,40 @@
               rel="noopener noreferrer"
               class="btn btn-secondary"
             >
-              Follow Instagram
+              Follow on Instagram
             </a>
 
           </div>
 
+
         </div>
 
 
-        <!-- Logout -->
-        <div class="dashboard-logout">
+        <!-- LOGOUT -->
+        <div class="hero-buttons">
 
           <button
             type="button"
-            class="
+            class="btn btn-primary"
+            onclick="logout()"
+          >
+            Logout
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FIREBASE APP -->
+  <script
+    type="module"
+    src="app.js"
+  ></script>
+
+</body>
+</html>
