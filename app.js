@@ -8,11 +8,6 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
-
-/* =========================
-   FIREBASE CONFIG
-========================= */
-
 const firebaseConfig = {
   apiKey: "AIzaSyCIjsySkhok2u7qzFgMHqK9wfULrKgsYvY",
   authDomain: "nk-digital-hub.firebaseapp.com",
@@ -23,11 +18,6 @@ const firebaseConfig = {
   measurementId: "G-SKNYC5BC1H"
 };
 
-
-/* =========================
-   INITIALIZE FIREBASE
-========================= */
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -37,7 +27,6 @@ const auth = getAuth(app);
 ========================= */
 
 window.signup = async function () {
-
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const msg = document.getElementById("msg");
@@ -47,62 +36,36 @@ window.signup = async function () {
   const email = emailInput.value.trim();
   const password = passwordInput.value;
 
-
   if (email === "" || password === "") {
-
-    if (msg) {
-      msg.textContent = "Please enter email and password.";
-    }
-
+    if (msg) msg.textContent = "Please enter email and password.";
     return;
   }
-
 
   if (password.length < 6) {
-
-    if (msg) {
-      msg.textContent = "Password must be at least 6 characters.";
-    }
-
+    if (msg) msg.textContent = "Password must be at least 6 characters.";
     return;
   }
 
-
   try {
+    if (msg) msg.textContent = "Creating account...";
 
-    if (msg) {
-      msg.textContent = "Creating account...";
-    }
-
-    await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
+    await createUserWithEmailAndPassword(auth, email, password);
 
     if (msg) {
       msg.textContent = "Account created successfully!";
     }
 
-
     setTimeout(() => {
-
       window.location.href = "dashboard.html";
-
     }, 800);
 
-
   } catch (error) {
-
-    console.error(error);
+    console.error("Signup error:", error);
 
     if (msg) {
       msg.textContent = getFirebaseError(error);
     }
-
   }
-
 };
 
 
@@ -111,7 +74,6 @@ window.signup = async function () {
 ========================= */
 
 window.login = async function () {
-
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const msg = document.getElementById("msg");
@@ -121,53 +83,31 @@ window.login = async function () {
   const email = emailInput.value.trim();
   const password = passwordInput.value;
 
-
   if (email === "" || password === "") {
-
-    if (msg) {
-      msg.textContent = "Please enter email and password.";
-    }
-
+    if (msg) msg.textContent = "Please enter email and password.";
     return;
   }
 
-
   try {
+    if (msg) msg.textContent = "Logging in...";
 
-    if (msg) {
-      msg.textContent = "Logging in...";
-    }
-
-
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
+    await signInWithEmailAndPassword(auth, email, password);
 
     if (msg) {
       msg.textContent = "Login successful!";
     }
 
-
     setTimeout(() => {
-
       window.location.href = "dashboard.html";
-
     }, 500);
 
-
   } catch (error) {
-
-    console.error(error);
+    console.error("Login error:", error);
 
     if (msg) {
       msg.textContent = getFirebaseError(error);
     }
-
   }
-
 };
 
 
@@ -176,22 +116,12 @@ window.login = async function () {
 ========================= */
 
 window.logout = async function () {
-
   try {
-
     await signOut(auth);
-
     window.location.href = "login.html";
-
   } catch (error) {
-
-    console.error(
-      "Logout error:",
-      error
-    );
-
+    console.error("Logout error:", error);
   }
-
 };
 
 
@@ -200,50 +130,26 @@ window.logout = async function () {
 ========================= */
 
 onAuthStateChanged(auth, (user) => {
-
   const currentPage =
-    window.location.pathname
-      .split("/")
-      .pop()
-      .toLowerCase();
-
-
-  /*
-    Dashboard AND Profile
-    require login
-  */
+    window.location.pathname.split("/").pop().toLowerCase();
 
   if (
     currentPage === "dashboard.html" ||
-    currentPage === "profile.html"
+    currentPage === "profile.html" ||
+    currentPage === "online-classes.html"
   ) {
-
     if (!user) {
-
       window.location.href = "login.html";
-
       return;
     }
 
-
-    /*
-      Show registered email
-      on Dashboard and Profile
-    */
-
-    const userEmail =
-      document.getElementById("userEmail");
-
+    const userEmail = document.getElementById("userEmail");
 
     if (userEmail) {
-
       userEmail.textContent =
         user.email || "Email not available";
-
     }
-
   }
-
 });
 
 
@@ -252,11 +158,36 @@ onAuthStateChanged(auth, (user) => {
 ========================= */
 
 function getFirebaseError(error) {
-
   switch (error.code) {
 
     case "auth/email-already-in-use":
       return "This email is already registered.";
 
     case "auth/invalid-email":
-      return "Please enter a valid email address
+      return "Please enter a valid email address.";
+
+    case "auth/weak-password":
+      return "Password is too weak. Use at least 6 characters.";
+
+    case "auth/user-not-found":
+      return "No account found with this email.";
+
+    case "auth/wrong-password":
+      return "Incorrect password.";
+
+    case "auth/invalid-credential":
+      return "Invalid email or password.";
+
+    case "auth/too-many-requests":
+      return "Too many attempts. Please try again later.";
+
+    case "auth/network-request-failed":
+      return "Network error. Please check your internet connection.";
+
+    case "auth/operation-not-allowed":
+      return "Email/password authentication is not enabled.";
+
+    default:
+      return error.message || "Something went wrong. Please try again.";
+  }
+}
