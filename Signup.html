@@ -1,194 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | NK Digital Hub</title>
 
-<title>Sign Up | NKDIGITALHUB2030</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f8fafc;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-.signup-box{
-
-background:white;
-
-padding:40px;
-
-width:340px;
-
-border-radius:12px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.12);
-
-text-align:center;
-
-}
-
-.logo{
-
-font-size:32px;
-
-font-weight:bold;
-
-margin-bottom:10px;
-
-}
-
-.nk{color:#2563eb;}
-.digital{color:#7c3aed;}
-.hub{color:#10b981;}
-.y2030{color:#f59e0b;}
-
-.subtitle{
-
-color:#555;
-
-margin-bottom:25px;
-
-}
-
-input{
-
-width:100%;
-
-padding:12px;
-
-margin:10px 0;
-
-border:1px solid #ddd;
-
-border-radius:8px;
-
-box-sizing:border-box;
-
-}
-
-button{
-
-width:100%;
-
-padding:12px;
-
-background:#2563eb;
-
-color:white;
-
-border:none;
-
-border-radius:8px;
-
-font-size:16px;
-
-cursor:pointer;
-
-}
-
-button:hover{
-
-opacity:.9;
-
-}
-
-.login{
-
-margin-top:18px;
-
-}
-
-.login a{
-
-text-decoration:none;
-
-color:#2563eb;
-
-}
-
-</style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="signup-box">
+  <!-- Header -->
+  <header class="site-header">
 
-<div class="logo">
+    <div class="container nav-container">
 
-<span class="nk">NK</span>
-<span class="digital">DIGITAL</span>
-<span class="hub">HUB</span>
-<span class="y2030">2030</span>
+      <a href="index.html" class="logo">
+        🌟 NK Digital Hub
+      </a>
 
-</div>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+      </nav>
 
-<p class="subtitle">
+    </div>
 
-Create Your Account
+  </header>
 
-</p>
 
-<form>
+  <!-- Sign Up Section -->
+  <main>
 
-<input
-type="text"
-placeholder="Full Name"
-required>
+    <section class="auth-section">
 
-<input
-type="email"
-placeholder="Email"
-required>
+      <div class="auth-card">
 
-<input
-type="password"
-placeholder="Password"
-required>
+        <div class="auth-icon">
+          👤
+        </div>
 
-<input
-type="password"
-placeholder="Confirm Password"
-required>
+        <h1>Create Account</h1>
 
-<button type="submit">
+        <p class="auth-subtitle">
+          Create your NK Digital Hub account to access member features.
+        </p>
 
-Sign Up
 
-</button>
+        <form onsubmit="event.preventDefault(); signup();">
 
-</form>
+          <div class="form-group">
 
-<div class="login">
+            <label for="email">
+              Email Address
+            </label>
 
-Already have an account?
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+              autocomplete="email"
+            >
 
-<a href="login.html">
+          </div>
 
-Login
 
-</a>
+          <div class="form-group">
 
-</div>
+            <label for="password">
+              Password
+            </label>
 
-</div>
+            <input
+              type="password"
+              id="password"
+              placeholder="Create a password"
+              minlength="6"
+              required
+              autocomplete="new-password"
+            >
 
-</body>
+          </div>
 
-</html><p id="msg"></p>
 
-</div>
+          <button
+            type="submit"
+            class="btn btn-primary auth-button"
+          >
+            Create Account
+          </button>
 
-<script type="module" src="App.js"></script>
+
+          <p id="msg" class="auth-message"></p>
+
+        </form>
+
+
+        <div class="auth-footer">
+
+          <p>
+            Already have an account?
+            <a href="login.html">Login</a>
+          </p>
+
+          <p>
+            <a href="index.html">
+              ← Back to Home
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Firebase App -->
+  <script type="module" src="app.js"></script>
 
 </body>
 </html>
