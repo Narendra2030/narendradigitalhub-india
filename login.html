@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Login to your NK Digital Hub account."
+  >
+
+  <meta name="author" content="Narendra Kumar">
+
   <title>Login | NK Digital Hub</title>
 
   <link rel="stylesheet" href="style.css">
@@ -11,7 +18,11 @@
 
 <body>
 
-  <!-- Header -->
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
   <header class="site-header">
 
     <div class="container nav-container">
@@ -21,8 +32,15 @@
       </a>
 
       <nav class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="signup.html">Sign Up</a>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="signup.html">
+          Create Account
+        </a>
+
       </nav>
 
     </div>
@@ -30,25 +48,40 @@
   </header>
 
 
-  <!-- Login Section -->
+  <!-- =====================================================
+       LOGIN
+  ====================================================== -->
+
   <main>
 
     <section class="auth-section">
 
       <div class="auth-card">
 
+
         <div class="auth-icon">
           🔐
         </div>
 
-        <h1>Welcome Back</h1>
+
+        <h1>
+          Welcome Back
+        </h1>
+
 
         <p class="auth-subtitle">
           Login to access your NK Digital Hub account.
         </p>
 
 
-        <form onsubmit="event.preventDefault(); login();">
+        <!-- LOGIN FORM -->
+
+        <form
+          onsubmit="event.preventDefault(); login();"
+        >
+
+
+          <!-- EMAIL -->
 
           <div class="form-group">
 
@@ -59,13 +92,16 @@
             <input
               type="email"
               id="email"
+              name="email"
               placeholder="Enter your email"
-              required
               autocomplete="email"
+              required
             >
 
           </div>
 
+
+          <!-- PASSWORD -->
 
           <div class="form-group">
 
@@ -76,13 +112,16 @@
             <input
               type="password"
               id="password"
+              name="password"
               placeholder="Enter your password"
-              required
               autocomplete="current-password"
+              required
             >
 
           </div>
 
+
+          <!-- LOGIN BUTTON -->
 
           <button
             type="submit"
@@ -92,17 +131,30 @@
           </button>
 
 
-          <p id="msg" class="auth-message"></p>
+          <!-- MESSAGE -->
+
+          <p
+            id="msg"
+            class="auth-message"
+            aria-live="polite"
+          ></p>
+
 
         </form>
 
 
+        <!-- AUTH FOOTER -->
+
         <div class="auth-footer">
+
 
           <p>
             Don't have an account?
-            <a href="signup.html">Create Account</a>
+            <a href="signup.html">
+              Create Account
+            </a>
           </p>
+
 
           <p>
             <a href="index.html">
@@ -110,7 +162,9 @@
             </a>
           </p>
 
+
         </div>
+
 
       </div>
 
@@ -119,8 +173,15 @@
   </main>
 
 
-  <!-- Firebase App -->
-  <script type="module" src="app.js"></script>
+  <!-- =====================================================
+       FIREBASE APP
+  ====================================================== -->
+
+  <script
+    type="module"
+    src="app.js"
+  ></script>
+
 
 </body>
 </html>
