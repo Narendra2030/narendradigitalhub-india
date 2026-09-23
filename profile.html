@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Profile | NK Digital Hub</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <div class="container nav-container">
+
+      <a href="index.html" class="logo">
+        🌟 NK Digital Hub
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+
+        <a href="dashboard.html">
+          Dashboard
+        </a>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="logout()"
+        >
+          Logout
+        </button>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- PROFILE -->
+  <main>
+
+    <section class="dashboard-section">
+
+      <div class="container">
+
+        <div class="dashboard-header">
+
+          <span class="dashboard-badge">
+            👤 My Profile
+          </span>
+
+          <h1>My Account</h1>
+
+          <p>
+            Your NK Digital Hub account information.
+          </p>
+
+        </div>
+
+
+        <!-- Profile Card -->
+        <div class="profile-card">
+
+          <div class="profile-avatar">
+            👤
+          </div>
+
+          <h2>Narendra Kumar</h2>
+
+          <p class="profile-label">
+            Registered Email
+          </p>
+
+          <p
+            id="userEmail"
+            class="profile-email"
+          >
+            Loading...
+          </p>
+
+
+          <div class="profile-status">
+
+            <span>
+              🟢
+            </span>
+
+            <strong>
+              Account Active
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- Account Information -->
+        <div class="info-grid">
+
+          <div class="info-card">
+
+            <h3>🔐 Account</h3>
+
+            <p>
+              Your account is protected by
+              Firebase Authentication.
+            </p>
+
+          </div>
+
+
+          <div class="info-card">
+
+            <h3>🎓 Learning</h3>
+
+            <p>
+              Access online classes, study material
+              and special content from your dashboard.
+            </p>
+
+          </div>
+
+
+          <div class="info-card">
+
+            <h3>📥 Resources</h3>
+
+            <p>
+              Access available documents and
+              downloadable resources.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Actions -->
+        <div class="hero-buttons">
+
+          <a
+            href="dashboard.html"
+            class="btn btn-primary"
+          >
+            ← Back to Dashboard
+          </a>
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="logout()"
+          >
+            Logout
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Firebase -->
+  <script
+    type="module"
+    src="app.js"
+  ></script>
+
+</body>
+</html>
