@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="NK Digital Hub Member Dashboard"
+  >
+
   <title>Dashboard | NK Digital Hub</title>
 
   <link rel="stylesheet" href="style.css">
@@ -11,8 +16,13 @@
 
 <body>
 
-  <!-- HEADER -->
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
   <header class="site-header">
+
     <div class="container nav-container">
 
       <a href="index.html" class="logo">
@@ -36,15 +46,22 @@
       </nav>
 
     </div>
+
   </header>
 
 
-  <!-- DASHBOARD -->
+  <!-- =====================================================
+       DASHBOARD
+  ====================================================== -->
+
   <main>
 
     <section class="dashboard-section">
 
       <div class="container">
+
+
+        <!-- DASHBOARD INTRO -->
 
         <div class="dashboard-header">
 
@@ -57,6 +74,11 @@
           </h1>
 
           <p>
+            Your account is successfully connected to
+            NK Digital Hub.
+          </p>
+
+          <p>
             Logged in as:
             <strong id="userEmail">
               Loading...
@@ -66,11 +88,15 @@
         </div>
 
 
-        <!-- DASHBOARD CARDS -->
+        <!-- =================================================
+             DASHBOARD GRID
+        ================================================== -->
+
         <div class="dashboard-grid">
 
 
           <!-- MY PROFILE -->
+
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
@@ -82,7 +108,8 @@
             </h2>
 
             <p>
-              View your account information and registered email.
+              View your account information and
+              registered email address.
             </p>
 
             <a
@@ -96,6 +123,7 @@
 
 
           <!-- ONLINE CLASSES -->
+
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
@@ -107,7 +135,8 @@
             </h2>
 
             <p>
-              Access online classes and educational content.
+              Explore educational content and
+              online learning resources.
             </p>
 
             <a
@@ -121,6 +150,7 @@
 
 
           <!-- STUDY MATERIAL -->
+
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
@@ -132,21 +162,23 @@
             </h2>
 
             <p>
-              Access notes, study material and learning resources.
+              Study notes, learning resources and
+              educational material will be organised here.
             </p>
 
             <button
               type="button"
               class="btn btn-secondary"
-              onclick="alert('Study Material will be available soon.')"
+              onclick="alert('Study Material section is being prepared.')"
             >
-              View Material
+              Study Material
             </button>
 
           </div>
 
 
           <!-- SPECIAL CONTENT -->
+
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
@@ -158,21 +190,23 @@
             </h2>
 
             <p>
-              Members can access special and exclusive content.
+              Special learning resources and
+              selected content for members.
             </p>
 
             <button
               type="button"
               class="btn btn-secondary"
-              onclick="alert('Special Content will be available soon.')"
+              onclick="alert('Special Content section is being prepared.')"
             >
-              Open Content
+              Explore Content
             </button>
 
           </div>
 
 
           <!-- DOWNLOADS -->
+
           <div class="dashboard-card">
 
             <div class="dashboard-icon">
@@ -184,125 +218,16 @@
             </h2>
 
             <p>
-              Download available documents and useful resources.
+              Useful documents and downloadable
+              resources will be available here.
             </p>
 
             <button
               type="button"
               class="btn btn-secondary"
-              onclick="alert('Downloads will be available soon.')"
+              onclick="alert('Downloads section is being prepared.')"
             >
               Open Downloads
             </button>
 
-          </div>
-
-
-          <!-- ONLINE SERVICES -->
-          <div class="dashboard-card">
-
-            <div class="dashboard-icon">
-              💻
-            </div>
-
-            <h2>
-              Online Services
-            </h2>
-
-            <p>
-              Explore available online assistance and services.
-            </p>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onclick="alert('Online Services will be available soon.')"
-            >
-              View Services
-            </button>
-
-          </div>
-
-
-          <!-- CONTACT -->
-          <div class="dashboard-card">
-
-            <div class="dashboard-icon">
-              📧
-            </div>
-
-            <h2>
-              Contact
-            </h2>
-
-            <p>
-              Contact NK Digital Hub through email.
-            </p>
-
-            <a
-              href="mailto:Nk3560777@gmail.com"
-              class="btn btn-secondary"
-            >
-              Contact Us
-            </a>
-
-          </div>
-
-
-          <!-- INSTAGRAM -->
-          <div class="dashboard-card">
-
-            <div class="dashboard-icon">
-              📸
-            </div>
-
-            <h2>
-              Instagram
-            </h2>
-
-            <p>
-              Follow NK Digital Hub on Instagram.
-            </p>
-
-            <a
-              href="https://www.instagram.com/nk_calmbeing?stkn=MWhldWxqbGJteDcyNQ=="
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-            >
-              Follow on Instagram
-            </a>
-
-          </div>
-
-
-        </div>
-
-
-        <!-- LOGOUT -->
-        <div class="hero-buttons">
-
-          <button
-            type="button"
-            class="btn btn-primary"
-            onclick="logout()"
-          >
-            Logout
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <script
-    type="module"
-    src="app.js"
-  ></script>
-
-</body>
-</html>
+         
