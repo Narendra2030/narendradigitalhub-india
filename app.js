@@ -9,6 +9,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
 const firebaseConfig = {
   apiKey: "AIzaSyCIjsySkhok2u7qzFgMHqK9wfULrKgsYvY",
   authDomain: "nk-digital-hub.firebaseapp.com",
@@ -19,6 +23,10 @@ const firebaseConfig = {
   measurementId: "G-SKNYC5BC1H"
 };
 
+
+/* =========================
+   INITIALIZE FIREBASE
+========================= */
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -40,18 +48,24 @@ window.signup = async function () {
   const password = passwordInput.value;
 
   if (!email || !password) {
-    if (msg) msg.textContent = "Please enter email and password.";
+    if (msg) {
+      msg.textContent = "Please enter email and password.";
+    }
     return;
   }
 
   if (password.length < 6) {
-    if (msg) msg.textContent = "Password must be at least 6 characters.";
+    if (msg) {
+      msg.textContent = "Password must be at least 6 characters.";
+    }
     return;
   }
 
   try {
 
-    if (msg) msg.textContent = "Creating account...";
+    if (msg) {
+      msg.textContent = "Creating account...";
+    }
 
     await createUserWithEmailAndPassword(
       auth,
@@ -94,13 +108,17 @@ window.login = async function () {
   const password = passwordInput.value;
 
   if (!email || !password) {
-    if (msg) msg.textContent = "Please enter email and password.";
+    if (msg) {
+      msg.textContent = "Please enter email and password.";
+    }
     return;
   }
 
   try {
 
-    if (msg) msg.textContent = "Logging in...";
+    if (msg) {
+      msg.textContent = "Logging in...";
+    }
 
     await signInWithEmailAndPassword(
       auth,
@@ -131,15 +149,17 @@ window.login = async function () {
    LOGOUT
 ========================= */
 
-window.logout = async function () {
+async function performLogout() {
 
   try {
 
+    console.log("Logout started...");
+
     await signOut(auth);
 
-    console.log("User logged out successfully.");
+    console.log("Firebase logout successful.");
 
-    window.location.replace("login.html");
+    window.location.href = "login.html";
 
   } catch (error) {
 
@@ -149,7 +169,47 @@ window.logout = async function () {
       "Logout failed. Please check your internet connection and try again."
     );
   }
+}
+
+
+/* =========================
+   GLOBAL LOGOUT FUNCTION
+========================= */
+
+window.logout = function () {
+  performLogout();
 };
+
+
+/* =========================
+   AUTOMATIC LOGOUT BUTTON
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll("button, a");
+
+  buttons.forEach((button) => {
+
+    const text = button.textContent
+      .trim()
+      .toLowerCase();
+
+    if (text === "logout" || text === "log out") {
+
+      button.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        performLogout();
+
+      });
+
+    }
+
+  });
+
+});
 
 
 /* =========================
@@ -172,7 +232,7 @@ onAuthStateChanged(auth, (user) => {
 
     if (!user) {
 
-      window.location.replace("login.html");
+      window.location.href = "login.html";
 
       return;
     }
@@ -181,10 +241,14 @@ onAuthStateChanged(auth, (user) => {
       document.getElementById("userEmail");
 
     if (userEmail) {
+
       userEmail.textContent =
         user.email || "Email not available";
+
     }
+
   }
+
 });
 
 
