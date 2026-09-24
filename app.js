@@ -8,6 +8,7 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyCIjsySkhok2u7qzFgMHqK9wfULrKgsYvY",
   authDomain: "nk-digital-hub.firebaseapp.com",
@@ -18,6 +19,7 @@ const firebaseConfig = {
   measurementId: "G-SKNYC5BC1H"
 };
 
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -27,6 +29,7 @@ const auth = getAuth(app);
 ========================= */
 
 window.signup = async function () {
+
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const msg = document.getElementById("msg");
@@ -36,7 +39,7 @@ window.signup = async function () {
   const email = emailInput.value.trim();
   const password = passwordInput.value;
 
-  if (email === "" || password === "") {
+  if (!email || !password) {
     if (msg) msg.textContent = "Please enter email and password.";
     return;
   }
@@ -47,9 +50,14 @@ window.signup = async function () {
   }
 
   try {
+
     if (msg) msg.textContent = "Creating account...";
 
-    await createUserWithEmailAndPassword(auth, email, password);
+    await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
     if (msg) {
       msg.textContent = "Account created successfully!";
@@ -60,6 +68,7 @@ window.signup = async function () {
     }, 800);
 
   } catch (error) {
+
     console.error("Signup error:", error);
 
     if (msg) {
@@ -74,6 +83,7 @@ window.signup = async function () {
 ========================= */
 
 window.login = async function () {
+
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const msg = document.getElementById("msg");
@@ -83,15 +93,20 @@ window.login = async function () {
   const email = emailInput.value.trim();
   const password = passwordInput.value;
 
-  if (email === "" || password === "") {
+  if (!email || !password) {
     if (msg) msg.textContent = "Please enter email and password.";
     return;
   }
 
   try {
+
     if (msg) msg.textContent = "Logging in...";
 
-    await signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
     if (msg) {
       msg.textContent = "Login successful!";
@@ -102,6 +117,7 @@ window.login = async function () {
     }, 500);
 
   } catch (error) {
+
     console.error("Login error:", error);
 
     if (msg) {
@@ -116,11 +132,22 @@ window.login = async function () {
 ========================= */
 
 window.logout = async function () {
+
   try {
+
     await signOut(auth);
-    window.location.href = "login.html";
+
+    console.log("User logged out successfully.");
+
+    window.location.replace("login.html");
+
   } catch (error) {
+
     console.error("Logout error:", error);
+
+    alert(
+      "Logout failed. Please check your internet connection and try again."
+    );
   }
 };
 
@@ -130,20 +157,28 @@ window.logout = async function () {
 ========================= */
 
 onAuthStateChanged(auth, (user) => {
+
   const currentPage =
-    window.location.pathname.split("/").pop().toLowerCase();
+    window.location.pathname
+      .split("/")
+      .pop()
+      .toLowerCase();
 
   if (
     currentPage === "dashboard.html" ||
     currentPage === "profile.html" ||
     currentPage === "online-classes.html"
   ) {
+
     if (!user) {
-      window.location.href = "login.html";
+
+      window.location.replace("login.html");
+
       return;
     }
 
-    const userEmail = document.getElementById("userEmail");
+    const userEmail =
+      document.getElementById("userEmail");
 
     if (userEmail) {
       userEmail.textContent =
@@ -158,6 +193,7 @@ onAuthStateChanged(auth, (user) => {
 ========================= */
 
 function getFirebaseError(error) {
+
   switch (error.code) {
 
     case "auth/email-already-in-use":
@@ -188,6 +224,9 @@ function getFirebaseError(error) {
       return "Email/password authentication is not enabled.";
 
     default:
-      return error.message || "Something went wrong. Please try again.";
+      return (
+        error.message ||
+        "Something went wrong. Please try again."
+      );
   }
 }
