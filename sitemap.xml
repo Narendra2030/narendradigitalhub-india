@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Core Public Gateway Index Layer -->
   <url>
     <loc>https://narendra2030.github.io/narendradigitalhub-india/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
+  <!-- Public Account Authentication Entry -->
   <url>
     <loc>https://narendra2030.github.io/narendradigitalhub-india/login.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
+  <!-- Public Account Registration Gateway -->
   <url>
     <loc>https://narendra2030.github.io/narendradigitalhub-india/signup.html</loc>
-  </url>
-
-  <url>
-    <loc>https://narendra2030.github.io/narendradigitalhub-india/dashboard.html</loc>
-  </url>
-
-  <url>
-    <loc>https://narendra2030.github.io/narendradigitalhub-india/profile.html</loc>
-  </url>
-
-  <url>
-    <loc>https://narendra2030.github.io/narendradigitalhub-india/online-classes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
