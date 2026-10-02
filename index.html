@@ -6,18 +6,227 @@
   <meta name="description" content="NK Digital Hub 2030 - Premium educational resources, comprehensive computer skill modules, and essential online utilities led by Narendra Kumar.">
   <meta name="author" content="Narendra Kumar">
   <title>NK Digital Hub 2030 | Narendra Kumar</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- EMBEDDED SYSTEM BLUEPRINT CSS (No External File Needed) -->
+  <style>
+    :root {
+      --primary-color: #06264d;
+      --secondary-color: #0877c9;
+      --dark-accent: #123b68;
+      --text-main: #172033;
+      --text-muted: #64778e;
+      --bg-main: #eef3f9;
+      --bg-card: #ffffff;
+      --border-color: #cbdced;
+      --transition-smooth: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+      color: var(--text-main);
+      background: var(--bg-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: linear-gradient(135deg, #ffffff, #f4f8ff);
+      border-bottom: 1px solid #d7e2f0;
+      box-shadow: 0 5px 22px rgba(15, 45, 80, 0.10);
+    }
+
+    .nav-container {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary-color);
+      font-size: 21px;
+      font-weight: 800;
+      white-space: nowrap;
+      letter-spacing: -0.4px;
+      transition: color var(--transition-smooth);
+    }
+
+    .logo:hover {
+      color: var(--secondary-color);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .nav-menu a {
+      color: #344b68;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-radius: 8px;
+      transition: all var(--transition-smooth);
+    }
+
+    .nav-menu a:hover {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--secondary-color), #1554a5);
+    }
+
+    .nav-signup {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, var(--secondary-color), #1554a5) !important;
+      box-shadow: 0 5px 15px rgba(8, 119, 201, 0.25);
+    }
+
+    .nav-signup:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(8, 119, 201, 0.35);
+    }
+
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      padding: 95px 0;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(0, 170, 255, 0.28), transparent 32%),
+        radial-gradient(circle at 85% 15%, rgba(87, 74, 255, 0.30), transparent 34%),
+        linear-gradient(135deg, var(--primary-color) 0%, #084c83 48%, #152b73 100%);
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: -220px;
+      top: -220px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow:
+        0 0 0 45px rgba(255, 255, 255, 0.035),
+        0 0 0 90px rgba(255, 255, 255, 0.025),
+        0 0 0 135px rgba(255, 255, 255, 0.018);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 20px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all var(--transition-smooth);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #ffffff; background: linear-gradient(135deg, var(--secondary-color), #1554a5); box-shadow: 0 7px 20px rgba(8, 119, 201, 0.25); }
+    .btn-secondary { color: #0b4e91; background: #ffffff; border-color: #bcd4ed; box-shadow: 0 5px 15px rgba(20, 50, 90, 0.08); }
+    .btn-secondary:hover { color: #06457f; background: #edf7ff; border-color: #78b9e9; }
+    
+    .hero-buttons { display: flex; align-items: center; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .content-section { position: relative; padding: 85px 0; border-bottom: 1px solid #d9e3ef; }
+    .content-section:nth-of-type(even) { background: #f8fbff; }
+    .section-heading { max-width: 780px; margin: 0 auto 42px; text-align: center; }
+    
+    .section-heading > span {
+      display: inline-block; padding: 5px 12px; margin-bottom: 12px; border-radius: 999px;
+      color: #0868ae; background: #e7f4ff; border: 1px solid #c6e5fa; font-size: 12px; font-weight: 900;
+      text-transform: uppercase; letter-spacing: 1.2px;
+    }
+
+    .section-heading h2 { margin-bottom: 12px; color: #12345c; font-size: clamp(30px, 5vw, 44px); line-height: 1.15; letter-spacing: -1px; }
+    .section-heading p { color: #657891; font-size: 16px; }
+
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .info-card {
+      position: relative; padding: 27px 23px; background: linear-gradient(145deg, #ffffff, #f5faff);
+      border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 7px 25px rgba(22, 57, 91, 0.07);
+      overflow: hidden; transition: all var(--transition-smooth);
+    }
+    .info-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--secondary-color), #38bdf8, #635bff); }
+    .info-card:hover { transform: translateY(-6px); border-color: #8ec4eb; box-shadow: 0 15px 35px rgba(22, 57, 91, 0.13); }
+    .info-card h3 { margin-bottom: 12px; color: #154d82; font-size: 18px; }
+    .info-card p { color: var(--text-muted); font-size: 14px; }
+
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .feature-card {
+      position: relative; display: flex; flex-direction: column; min-height: 245px; padding: 29px;
+      background: linear-gradient(145deg, #ffffff, #f7fbff); border: 1px solid var(--border-color);
+      border-radius: 16px; box-shadow: 0 8px 28px rgba(22, 57, 91, 0.07); overflow: hidden; transition: all var(--transition-smooth);
+    }
+    .feature-card::before { content: ""; position: absolute; left: 0; top: 0; width: 5px; height: 100%; background: linear-gradient(180deg, var(--secondary-color), #635bff); }
+    .feature-card:hover { transform: translateY(-7px); border-color: #8fc6eb; box-shadow: 0 18px 42px rgba(22, 57, 91, 0.14); }
+    
+    .card-icon { width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; border-radius: 14px; background: linear-gradient(135deg, #e4f4ff, #edf0ff); border: 1px solid #c5ddf3; font-size: 26px; }
+    .feature-card h3 { margin-bottom: 9px; color: var(--dark-accent); font-size: 19px; }
+    .feature-card p { flex: 1; color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+    .feature-card .btn { align-self: flex-start; margin-top: 20px; }
+
+    .member-section { text-align: center; background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15), transparent 30%), linear-gradient(135deg, var(--primary-color), #0a477a, #172b70); color: #ffffff; }
+    .member-section .section-heading h2 { color: #ffffff; }
+    .member-section .section-heading > span { color: #d7f4ff; background: rgba(255, 255, 255, 0.09); border-color: rgba(255, 255, 255, 0.20); }
+    .member-section .section-heading p { color: #c6d9eb; }
+
+    .site-footer { padding: 30px 20px; background: linear-gradient(135deg, #06172d, #0b3156); color: #b7c9da; text-align: center; border-top: 4px solid var(--secondary-color); }
+    .site-footer p { margin: 5px 0; font-size: 13px; }
+
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; padding: 15px 0; gap: 15px; }
+      .nav-menu { justify-content: center; width: 100%; }
+      .hero-text h1 { font-size: 46px; }
+      .hero-buttons { justify-content: center; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- =========================================================
-       NAVIGATION HEADER HEADER
-  ========================================================= -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        🌟 NK Digital Hub 2030
-      </a>
+      <a href="index.html" class="logo">🌟 NK Digital Hub 2030</a>
       <nav class="nav-menu">
         <a href="index.html">Home</a>
         <a href="#about">About</a>
@@ -33,21 +242,13 @@
     </div>
   </header>
 
-  <!-- =========================================================
-       MAIN SITE CONTENT LAYERS
-  ========================================================= */ -->
   <main>
-
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
     <section id="home" class="hero-section">
       <div class="container hero-content">
         <div class="hero-text">
           <span class="hero-badge">🚀 Welcome to NK Digital Hub 2030</span>
           <h1>Learn. <span>Build.</span> Grow.</h1>
           <p>An advanced engineering environment focused on technical growth, professional computer skills, academic support, and seamless digital service distribution.</p>
-          <p>Explore high-value educational assets, master production-ready accounting tools, and unlock streamlined technical features.</p>
           <div class="hero-buttons">
             <a href="#about" class="btn btn-primary">Explore Profile</a>
             <a href="signup.html" class="btn btn-secondary">Create Account</a>
@@ -56,180 +257,6 @@
       </div>
     </section>
 
-    <!-- =========================
-         ABOUT ME SECTION
-    ========================== -->
     <section id="about" class="content-section">
       <div class="container">
         <div class="section-heading">
-          <span>About Me</span>
-          <h2>Narendra Kumar</h2>
-          <p>Bridging academic specialization and technical proficiency to build modern online learning utilities.</p>
-        </div>
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>🎓 Matriculation (10th)</h3>
-            <p>Completed foundational studies successfully in 2021.</p>
-          </div>
-          <div class="info-card">
-            <h3>📚 Intermediate (12th)</h3>
-            <p>Completed in 2023 with core PCB specialization: Physics, Chemistry, and Biology.</p>
-          </div>
-          <div class="info-card">
-            <h3>🏫 Higher Education</h3>
-            <p>Currently pursuing graduation curricula under MJPRU, Bareilly, Uttar Pradesh.</p>
-          </div>
-          <div class="info-card">
-            <h3>📜 Technical Certification</h3>
-            <p>Earned Diploma in Computer Financial Accounting (DCFA) via Horizon Academy, 2025.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         SKILLS HUB SECTION
-    ========================== -->
-    <section id="skills" class="content-section">
-      <div class="container">
-        <div class="section-heading">
-          <span>My Skills</span>
-          <h2>Computer & Professional Capabilities</h2>
-          <p>Industry-standard tool workflows optimized for administrative, financial, and digital asset tracking.</p>
-        </div>
-        <div class="cards-grid">
-          <div class="feature-card">
-            <div class="card-icon">💻</div>
-            <h3>System Operations</h3>
-            <p>Advanced operating systems management and daily high-volume digital workflows.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">📝</div>
-            <h3>MS Word</h3>
-            <p>Professional documentation engineering, structural formatting, and dynamic template styles.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">📊</div>
-            <h3>MS Excel</h3>
-            <p>Complex formula tracking, automated data parsing, validation, and analytics dashboards.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">📽️</div>
-            <h3>MS PowerPoint</h3>
-            <p>High-impact visual slide configuration and presentation layout composition.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">🧾</div>
-            <h3>Tally Prime</h3>
-            <p>Comprehensive ledger management, inventory mapping, and system transaction audit inputs.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">💰</div>
-            <h3>Financial Accounting</h3>
-            <p>Core balance tracking mechanisms and production-grade ledger computation.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">📋</div>
-            <h3>GST Operations</h3>
-            <p>Essential tax configuration paradigms and professional reconciliation tracking.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">⌨️</div>
-            <h3>Data Operations</h3>
-            <p>High-accuracy alpha-numeric data input management and digital records validation.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">🌐</div>
-            <h3>Online Utility Handling</h3>
-            <p>Digital registration interface architecture and structural submission processing.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         ACADEMIC LEARNING SECTION
-    ========================== -->
-    <section id="learning" class="content-section">
-      <div class="container">
-        <div class="section-heading">
-          <span>Online Learning</span>
-          <h2>Student Resource Portals</h2>
-          <p>Highly structured learning assets planned systematically for K-12 educational tiers.</p>
-        </div>
-        <div class="cards-grid">
-          <div class="feature-card">
-            <div class="card-icon">🎓</div>
-            <h3>Classes 1 to 12</h3>
-            <p>Core curriculum asset materials aligned with standard primary and secondary boards.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">📖</div>
-            <h3>Subject-Wise Syllabus</h3>
-            <p>Granular structural documentation divided by individual subject tracks for optimized search.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">🔬</div>
-            <h3>PCB Science Core</h3>
-            <p>Dedicated high-tier study assets for Physics, Chemistry, and Biology tracks.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">💻</div>
-            <h3>Protected Interactive Assets</h3>
-            <p>Premium online learning metrics unlocked safely through the authenticated dashboard space.</p>
-          </div>
-        </div>
-        <div class="hero-buttons">
-          <a href="login.html" class="btn btn-primary">Access Member Learning</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         DIGITAL SERVICES SECTION
-    ========================== -->
-    <section id="services" class="content-section">
-      <div class="container">
-        <div class="section-heading">
-          <span>Digital Services</span>
-          <h2>Online Operations Assistance</h2>
-          <p>Reliable business-to-consumer digital support and secure web form processing solutions.</p>
-        </div>
-        <div class="cards-grid">
-          <div class="feature-card">
-            <div class="card-icon">📝</div>
-            <h3>E-Governance Processing</h3>
-            <p>Accurate verification tracking and secure form entry management for public recruitment portals.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">⌨️</div>
-            <h3>Enterprise Data Handling</h3>
-            <p>Accurate record computation and batch file updates executed for complex workflows.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">💼</div>
-            <h3>Client-Centric Projects</h3>
-            <p>Bespoke technology tasks managed strictly according to client timeline constraints.</p>
-          </div>
-          <div class="feature-card">
-            <div class="card-icon">🌐</div>
-            <h3>General Cloud Utilities</h3>
-            <p>Miscellaneous digital operations, troubleshooting actions, and web service integration.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         PROTECTED RESOURCES SECTION
-    ========================== -->
-    <section id="resources" class="content-section">
-      <div class="container">
-        <div class="section-heading">
-          <span>Resources</span>
-          <h2>Managed Document Hub</h2>
-          <p>Secure premium documents and educational toolkits available exclusively to verified accounts.</p>
-        </div>
-        <div class="cards-grid">
-          <div class="feature-card">
-            <div class="card-icon">📄</div>
