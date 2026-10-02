@@ -3,185 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Login to your NK Digital Hub account."
-  >
-
+  <meta name="description" content="Secure login gateway to access your authenticated NK Digital Hub 2030 member account and profile workspace.">
   <meta name="author" content="Narendra Kumar">
-
-  <title>Login | NK Digital Hub</title>
-
+  <title>Login | NK Digital Hub 2030</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
+  <!-- =========================================================
+       NAVIGATION HEADER LAYER
+  ========================================================= -->
   <header class="site-header">
-
     <div class="container nav-container">
-
       <a href="index.html" class="logo">
-        🌟 NK Digital Hub
+        🌟 NK Digital Hub 2030
       </a>
-
       <nav class="nav-menu">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="signup.html">
-          Create Account
-        </a>
-
+        <a href="index.html">Home</a>
+        <a href="signup.html">Create Account</a>
       </nav>
-
     </div>
-
   </header>
 
-
-  <!-- =====================================================
-       LOGIN
-  ====================================================== -->
-
+  <!-- =========================================================
+       SECURE PLATFORM LOGIN PORTAL
+  ========================================================= -->
   <main>
-
     <section class="auth-section">
-
       <div class="auth-card">
+        
+        <div class="auth-icon">🔐</div>
+        <h1>Welcome Back</h1>
+        <p class="auth-subtitle">Login to access your secure NK Digital Hub 2030 account panel.</p>
 
+        <!-- SECURE GATEWAY INTERACTION FORM -->
+        <form onsubmit="event.preventDefault(); login();">
 
-        <div class="auth-icon">
-          🔐
-        </div>
-
-
-        <h1>
-          Welcome Back
-        </h1>
-
-
-        <p class="auth-subtitle">
-          Login to access your NK Digital Hub account.
-        </p>
-
-
-        <!-- LOGIN FORM -->
-
-        <form
-          onsubmit="event.preventDefault(); login();"
-        >
-
-
-          <!-- EMAIL -->
-
+          <!-- Email Input Field -->
           <div class="form-group">
-
-            <label for="email">
-              Email Address
-            </label>
-
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              autocomplete="email"
+            <label for="email">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="name@example.com" 
+              autocomplete="email" 
               required
             >
-
           </div>
 
-
-          <!-- PASSWORD -->
-
+          <!-- Password Input Field -->
           <div class="form-group">
-
-            <label for="password">
-              Password
-            </label>
-
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              autocomplete="current-password"
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder="Enter your security password" 
+              autocomplete="current-password" 
               required
             >
-
           </div>
 
-
-          <!-- LOGIN BUTTON -->
-
-          <button
-            type="submit"
-            class="btn btn-primary auth-button"
-          >
-            Login
+          <!-- Authentication Submit Core Trigger -->
+          <button type="submit" class="btn btn-primary auth-button">
+            Verify Credentials
           </button>
 
-
-          <!-- MESSAGE -->
-
-          <p
-            id="msg"
-            class="auth-message"
-            aria-live="polite"
-          ></p>
-
+          <!-- System Status Live Message Box -->
+          <p id="msg" class="auth-message" aria-live="polite"></p>
 
         </form>
 
-
-        <!-- AUTH FOOTER -->
-
+        <!-- SECURE AUTH STRUCTURE FOOTER -->
         <div class="auth-footer">
-
-
-          <p>
-            Don't have an account?
-            <a href="signup.html">
-              Create Account
-            </a>
-          </p>
-
-
-          <p>
-            <a href="index.html">
-              ← Back to Home
-            </a>
-          </p>
-
-
+          <p>Don't have an account? <a href="signup.html">Create Account</a></p>
+          <p><a href="index.html">← Back to Home</a></p>
         </div>
 
-
       </div>
-
     </section>
-
   </main>
 
-
-  <!-- =====================================================
-       FIREBASE APP
-  ====================================================== -->
-
-  <script
-    type="module"
-    src="app.js"
-  ></script>
-
-
+  <!-- =========================================================
+       CORE RUNTIME PLATFORM SCRIPT ENGINE HOOK
+  ========================================================= -->
+  <script type="module" src="App.js"></script>
 </body>
 </html>
