@@ -3,219 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="My Profile - NK Digital Hub"
-  >
-
-  <title>My Profile | NK Digital Hub</title>
-
+  <meta name="description" content="NK Digital Hub 2030 Member Profile Workspace - Access secure credentials status verification, account telemetry, and data nodes.">
+  <title>My Profile | NK Digital Hub 2030</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
+  <!-- =========================================================
+       NAVIGATION HEADER LAYER
+  ========================================================= -->
   <header class="site-header">
-
     <div class="container nav-container">
-
       <a href="index.html" class="logo">
-        🌟 NK Digital Hub
+        🌟 NK Digital Hub 2030
       </a>
-
       <nav class="nav-menu">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="dashboard.html">
-          Dashboard
-        </a>
-
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="logout()"
-        >
-          Logout
-        </button>
-
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
       </nav>
-
     </div>
-
   </header>
 
-
-  <!-- =====================================================
-       PROFILE
-  ====================================================== -->
-
+  <!-- =========================================================
+       SECURE USER PROFILE SPACE
+  ========================================================= -->
   <main>
-
     <section class="dashboard-section">
-
       <div class="container">
 
-
-        <!-- PAGE INTRO -->
-
+        <!-- Section Introduction Core Header -->
         <div class="dashboard-header">
-
-          <span class="dashboard-badge">
-            👤 My Profile
-          </span>
-
-          <h1>
-            My Account
-          </h1>
-
-          <p>
-            View your account information and
-            NK Digital Hub membership status.
-          </p>
-
+          <span class="dashboard-badge">👤 Account Management Panel</span>
+          <h1>My Account</h1>
+          <p>Review your personal digital record telemetry and active system configuration metrics below.</p>
         </div>
 
-
-        <!-- =================================================
-             PROFILE CARD
-        ================================================== -->
-
+        <!-- =========================================================
+             SECURE CENTRAL PROFILE IDENTITY CARD
+        ========================================================= -->
         <div class="profile-card">
+          <div class="profile-avatar">👤</div>
+          <h2>Narendra Kumar</h2>
+          
+          <p class="profile-label">Registered Email</p>
+          <p id="userEmail" class="profile-email">Synchronizing Profile...</p>
 
-          <div class="profile-avatar">
-            👤
+          <div style="margin-top: 15px; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🟢</span>
+            <strong>Account Status Active</strong>
           </div>
-
-          <h2>
-            Narendra Kumar
-          </h2>
-
-          <p class="profile-label">
-            Registered Email
-          </p>
-
-          <p
-            id="userEmail"
-            class="profile-email"
-          >
-            Loading...
-          </p>
-
-
-          <div class="profile-status">
-
-            <span>
-              🟢
-            </span>
-
-            <strong>
-              Account Active
-            </strong>
-
-          </div>
-
         </div>
 
-
-        <!-- =================================================
-             ACCOUNT INFORMATION
-        ================================================== -->
-
+        <!-- =========================================================
+             ACCOUNT TELEMETRY MATRIX GRID
+        ========================================================= -->
         <div class="info-grid">
 
-
           <div class="info-card">
-
-            <h3>
-              🔐 Account Security
-            </h3>
-
-            <p>
-              Your account login is protected
-              through Firebase Authentication.
-            </p>
-
+            <h3>🔐 System Authorization</h3>
+            <p>Your unique security signature is managed under encrypted layers via Google Firebase cloud engine parameters.</p>
           </div>
 
-
           <div class="info-card">
-
-            <h3>
-              🎓 Learning
-            </h3>
-
-            <p>
-              Access online classes and
-              educational resources through
-              your member dashboard.
-            </p>
-
+            <h3>🎓 Curriculum Metrics</h3>
+            <p>Directly enter streaming tutorials, active lectures, and educational assets safely inside the central workspace.</p>
           </div>
 
-
           <div class="info-card">
-
-            <h3>
-              📚 Resources
-            </h3>
-
-            <p>
-              Study material, documents and
-              other member resources can be
-              accessed as they become available.
-            </p>
-
+            <h3>📚 Data Repositories</h3>
+            <p>Downloadable files, study records, and structural utility tools calibrate dynamically as extensions update.</p>
           </div>
 
-
           <div class="info-card">
-
-            <h3>
-              🌐 NK Digital Hub
-            </h3>
-
-            <p>
-              Your digital learning and
-              online services platform.
-            </p>
-
+            <h3>🌐 NK Digital Hub 2030</h3>
+            <p>Your central engineering space for professional computing modules and structural business processing solutions.</p>
           </div>
 
+        </div> <!-- Close Info Grid -->
 
-        </div>
-
-
-        <!-- =================================================
-             PROFILE ACTIONS
-        ================================================== -->
-
+        <!-- =========================================================
+             INTERACTIVE CONTROL ROUTING Directives
+        ========================================================= -->
         <div class="hero-buttons">
-
-          <a
-            href="dashboard.html"
-            class="btn btn-primary"
-          >
-            ← Back to Dashboard
-          </a>
-
-          <button
-            type="button"
-            class="btn btn-secondary"
-            onclick="logout()"
-          >
-            Logout
-          </button>
-
+          <a href="dashboard.html" class="btn btn-primary">← Back to Dashboard</a>
+          <button type="button" class="btn btn-secondary" onclick="logout()">Logout Session</button>
         </div>
 
+      </div> <!-- Close Container -->
+    </section>
+  </main>
 
-     
+  <!-- =========================================================
+       FOOTER LAYER
+  ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 NK Digital Hub 2030. All Rights Reserved. Managed under Lead System Administration.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       CORE RUNTIME PLATFORM SCRIPT HOOKS
+  ========================================================= -->
+  <script type="module" src="App.js"></script>
+</body>
+</html>
