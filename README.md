@@ -1,67 +1,54 @@
-# NK Digital Hub
+# NK Digital Hub 2030
 
-NK Digital Hub is a digital platform created by Narendra Kumar for learning, computer skills, online education, and useful digital services.
+NK Digital Hub 2030 is a modern digital platform designed for technology training, online education, and professional digital services. Created by Narendra Kumar, the platform empowers users with crucial technical skills and structural learning resources.
 
-## 🌐 Website
+## 🌐 Live Platform
+The ecosystem is hosted and deployed using GitHub Pages:
+* **Primary Hub:** [narendra2030.github.io/narendradigitalhub-india](https://github.io)
+* **E-Commerce Store:** [nkdigitalhub.store](https://nkdigitalhub.store)
 
-NK Digital Hub is published using GitHub Pages.
+---
 
-## ✨ Features
+## ✨ Key Features
 
-- Professional responsive website
-- Personal profile
-- Education information
-- Computer skills
-- MS Word
-- MS Excel
-- MS PowerPoint
-- Tally Prime
-- Accounting
-- GST
-- Data Entry
-- Online Forms
-- Online Learning
-- Classes 1 to 12
-- PCB-related educational content
-- Member Login
-- Member Account
-- Dashboard
-- Profile
-- Online Classes
-- Digital Services
-- Study Resources
-- Contact Information
+### 💻 Technical & Computer Skills
+* **Office Automation:** Advanced workflows in MS Word, MS Excel, and MS PowerPoint.
+* **Financial Accounting:** Core accounting principles, Tally Prime management, and GST compliance.
+* **Administration:** Accurate data entry processing and online utility form management.
 
-## 🔐 Member Area
+### 📚 Academic & Online Learning
+* **K-12 Education:** Complete curriculum resources supporting Classes 1 through 12.
+* **Specialized Science:** In-depth, structured educational content for Physics, Chemistry, and Biology (PCB).
+* **Virtual Classrooms:** Seamless access to digital study resources and live online sessions.
 
-Registered users can access the available member features through:
+### 🔐 Secure Member Portal
+Registered users gain entry to a personalized dashboard featuring:
+* Secure User Authentication (Login & Registration)
+* Personalized User Profiles
+* Premium Dashboard Interface
+* Direct Online Class Access
 
-- Login
-- Create Account
-- Dashboard
-- My Profile
-- Online Classes
+---
 
-## 🛠️ Technologies
+## 🛠️ Technology Stack
+* **Frontend Architecture:** HTML5, CSS3, JavaScript (ES6+)
+* **Backend Backend Services:** Firebase Authentication & Cloud Database hosting
+* **Deployment Infrastructure:** GitHub Pages & Custom Domain Routing
 
-- HTML5
-- CSS3
-- JavaScript
-- Firebase Authentication
-- GitHub Pages
+---
 
-## 👤 Author
+## 👤 Author & Administration
+* **Founder:** Narendra Kumar
+* **Project Role:** Lead Developer & Platform Administrator
 
-Narendra Kumar
+## 📧 Professional Contact & Support
+For collaborations, inquiries, or platform support, reach out via the channels below:
 
-## 📧 Contact
+* **Email:** [Nk3560777@gmail.com](mailto:Nk3560777@gmail.com)
+* **Instagram:** [@nk_calmbeing](https://instagram.com)
+* **WhatsApp:** @Nk_calmbeing82
 
-Email: Nk3560777@gmail.com
+---
 
-Instagram: @nk_calmbeing
-
-WhatsApp Username: Nk_calmbeing82
-
-## 📄 License
-
-© 2026 NK Digital Hub. All Rights Reserved.
+## 📄 License & Intellectual Property
+© 2026 NK Digital Hub 2030. All Rights Reserved. Protected under standard digital asset terms.
