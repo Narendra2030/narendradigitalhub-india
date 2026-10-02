@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Provision a secure new member account profile layer inside the NK Digital Hub 2030 network ecosystem to access premium dashboards.">
+  <meta name="description" content="Provision a secure new member account profile layer inside the NK Digital Hub 2030 network ecosystem.">
   <meta name="author" content="Narendra Kumar">
   <title>Create Account | NK Digital Hub 2030</title>
   
@@ -35,6 +35,10 @@
     .auth-footer a { color: var(--secondary-color); font-weight: 800; }
     @media (max-width: 680px) { .nav-container { flex-direction: column; padding: 12px 0; gap: 10px; } .auth-card { padding: 35px 25px; } }
   </style>
+
+  <!-- FIREBASE GLOBAL COMPAT SCRIPTS -->
+  <script src="https://gstatic.com"></script>
+  <script src="https://gstatic.com"></script>
 </head>
 <body>
   <header class="site-header">
@@ -53,7 +57,7 @@
         <h1>Create Account</h1>
         <p class="auth-subtitle">Provision your secure member account profile to unlock our premium tools.</p>
 
-        <form id="signupForm">
+        <form onsubmit="event.preventDefault(); runSignup();">
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" placeholder="name@example.com" autocomplete="email" required>
@@ -74,14 +78,10 @@
     </section>
   </main>
 
-  <!-- DIRECT INTERNAL MODULE DRIVER -->
-  <script type="module">
-    import { initializeApp } from "https://gstatic.com";
-    import { getAuth, createUserWithEmailAndPassword } from "https://gstatic.com";
-
+  <script>
     const firebaseConfig = {
       apiKey: "AIzaSyCIjsySkhok2u7qzFgMHqK9wfULrKgsYvY",
-      authDomain: "://firebaseapp.com",
+      authDomain: "nk-digital-hub.firebaseapp.com",
       projectId: "nk-digital-hub",
       storageBucket: "nk-digital-hub.firebasestorage.app",
       messagingSenderId: "313625666009",
@@ -89,11 +89,11 @@
       measurementId: "G-SKNYC5BC1H"
     };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    // Initialize Global Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
 
-    document.getElementById("signupForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
+    async function runSignup() {
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
       const msg = document.getElementById("msg");
@@ -107,15 +107,17 @@
       try {
         msg.style.color = "#52667d";
         msg.textContent = "Creating secure account...";
-        await createUserWithEmailAndPassword(auth, email, password);
+        
+        await auth.createUserWithEmailAndPassword(email, password);
+        
         msg.style.color = "#16a34a";
         msg.textContent = "Account created! Redirecting...";
         setTimeout(() => { window.location.href = "dashboard.html"; }, 800);
       } catch (error) {
         msg.style.color = "#b91c1c";
-        msg.textContent = "This email is already registered or structurally invalid.";
+        msg.textContent = "This email is already registered or invalid.";
       }
-    });
+    }
   </script>
 </body>
 </html>
