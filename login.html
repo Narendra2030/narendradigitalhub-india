@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Secure login gateway to access your authenticated NK Digital Hub 2030 member account and profile workspace.">
+  <meta name="description" content="Secure login gateway to access your authenticated NK Digital Hub 2030 member account.">
   <meta name="author" content="Narendra Kumar">
   <title>Login | NK Digital Hub 2030</title>
   
@@ -44,6 +44,10 @@
     .auth-footer a { color: var(--secondary-color); font-weight: 800; }
     @media (max-width: 680px) { .nav-container { flex-direction: column; padding: 12px 0; gap: 10px; } .auth-card { padding: 35px 25px; } }
   </style>
+
+  <!-- FIREBASE GLOBAL COMPAT SCRIPTS -->
+  <script src="https://gstatic.com"></script>
+  <script src="https://gstatic.com"></script>
 </head>
 <body>
   <header class="site-header">
@@ -62,7 +66,7 @@
         <h1>Welcome Back</h1>
         <p class="auth-subtitle">Login to access your secure NK Digital Hub 2030 account panel.</p>
 
-        <form id="loginForm">
+        <form onsubmit="event.preventDefault(); runLogin();">
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" placeholder="name@example.com" autocomplete="email" required>
@@ -83,14 +87,10 @@
     </section>
   </main>
 
-  <!-- DIRECT INTERNAL MODULE DRIVER -->
-  <script type="module">
-    import { initializeApp } from "https://gstatic.com";
-    import { getAuth, signInWithEmailAndPassword } from "https://gstatic.com";
-
+  <script>
     const firebaseConfig = {
       apiKey: "AIzaSyCIjsySkhok2u7qzFgMHqK9wfULrKgsYvY",
-      authDomain: "://firebaseapp.com",
+      authDomain: "nk-digital-hub.firebaseapp.com",
       projectId: "nk-digital-hub",
       storageBucket: "nk-digital-hub.firebasestorage.app",
       messagingSenderId: "313625666009",
@@ -98,11 +98,11 @@
       measurementId: "G-SKNYC5BC1H"
     };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    // Initialize Global Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
 
-    document.getElementById("loginForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
+    async function runLogin() {
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
       const msg = document.getElementById("msg");
@@ -110,7 +110,9 @@
       try {
         msg.style.color = "#52667d";
         msg.textContent = "Verifying credentials...";
-        await signInWithEmailAndPassword(auth, email, password);
+        
+        await auth.signInWithEmailAndPassword(email, password);
+        
         msg.style.color = "#16a34a";
         msg.textContent = "Success! Access granted.";
         setTimeout(() => { window.location.href = "dashboard.html"; }, 500);
@@ -118,7 +120,7 @@
         msg.style.color = "#b91c1c";
         msg.textContent = "Invalid email credentials or incorrect password.";
       }
-    });
+    }
   </script>
 </body>
 </html>
