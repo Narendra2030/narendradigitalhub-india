@@ -3,231 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="NK Digital Hub Member Dashboard"
-  >
-
-  <title>Dashboard | NK Digital Hub</title>
-
+  <meta name="description" content="NK Digital Hub 2030 Member Dashboard - Secure account profile workspace and direct educational resource gateways.">
+  <title>Dashboard | NK Digital Hub 2030</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
+  <!-- =========================================================
+       NAVIGATION HEADER LAYER
+  ========================================================= -->
   <header class="site-header">
-
     <div class="container nav-container">
-
       <a href="index.html" class="logo">
-        🌟 NK Digital Hub
+        🌟 NK Digital Hub 2030
       </a>
-
       <nav class="nav-menu">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="logout()"
-        >
-          Logout
-        </button>
-
+        <a href="index.html">Home</a>
+        <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
       </nav>
-
     </div>
-
   </header>
 
-
-  <!-- =====================================================
-       DASHBOARD
-  ====================================================== -->
-
+  <!-- =========================================================
+       CORE USER DASHBOARD INTERFACE
+  ========================================================= -->
   <main>
-
     <section class="dashboard-section">
-
       <div class="container">
 
-
-        <!-- DASHBOARD INTRO -->
-
+        <!-- User Orientation Info Card -->
         <div class="dashboard-header">
-
-          <span class="dashboard-badge">
-            🔐 Member Dashboard
-          </span>
-
-          <h1>
-            Welcome to Your Dashboard
-          </h1>
-
-          <p>
-            Your account is successfully connected to
-            NK Digital Hub.
-          </p>
-
-          <p>
-            Logged in as:
-            <strong id="userEmail">
-              Loading...
-            </strong>
-          </p>
-
+          <span class="dashboard-badge">🔐 Authenticated Session Workspace</span>
+          <h1>Welcome to Your Dashboard</h1>
+          <p>Your secure environment is successfully connected to the NK Digital Hub 2030 portal grid.</p>
+          <p>Session Identity: <strong id="userEmail">Synchronizing...</strong></p>
         </div>
 
-
-        <!-- =================================================
-             DASHBOARD GRID
-        ================================================== -->
-
+        <!-- =========================================================
+             DYNAMIC USER WORKSPACE INTERACTION GRIDS
+        ========================================================= -->
         <div class="dashboard-grid">
 
-
-          <!-- MY PROFILE -->
-
+          
           <div class="dashboard-card">
-
-            <div class="dashboard-icon">
-              👤
-            </div>
-
-            <h2>
-              My Profile
-            </h2>
-
-            <p>
-              View your account information and
-              registered email address.
-            </p>
-
-            <a
-              href="profile.html"
-              class="btn btn-secondary"
-            >
-              Open Profile
-            </a>
-
+            <div class="dashboard-icon">👤</div>
+            <h2>My Profile</h2>
+            <p>Access and review your current structural account details, registered parameters, and notification endpoints.</p>
+            <a href="profile.html" class="btn btn-secondary">Open Profile</a>
           </div>
 
-
-          <!-- ONLINE CLASSES -->
-
+          <!-- Academic Portals -->
           <div class="dashboard-card">
-
-            <div class="dashboard-icon">
-              🎓
-            </div>
-
-            <h2>
-              Online Classes
-            </h2>
-
-            <p>
-              Explore educational content and
-              online learning resources.
-            </p>
-
-            <a
-              href="online-classes.html"
-              class="btn btn-secondary"
-            >
-              Open Classes
-            </a>
-
+            <div class="dashboard-icon">🎓</div>
+            <h2>Online Classes</h2>
+            <p>Explore your primary digital learning streams, active lecture resources, and curriculum files.</p>
+            <a href="online-classes.html" class="btn btn-secondary">Open Classes</a>
           </div>
 
-
-          <!-- STUDY MATERIAL -->
-
+          <!-- Academic Study Material Core -->
           <div class="dashboard-card">
-
-            <div class="dashboard-icon">
-              📚
-            </div>
-
-            <h2>
-              Study Material
-            </h2>
-
-            <p>
-              Study notes, learning resources and
-              educational material will be organised here.
-            </p>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onclick="alert('Study Material section is being prepared.')"
-            >
-              Study Material
-            </button>
-
+            <div class="dashboard-icon">📚</div>
+            <h2>Study Material</h2>
+            <p>Curated revision templates, subject reference files, and structured syllabus matrices are being organized here.</p>
+            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: The Study Material catalog is currently being prepared.')">Study Material</button>
           </div>
 
-
-          <!-- SPECIAL CONTENT -->
-
+          <!-- Premium Premium Features -->
           <div class="dashboard-card">
-
-            <div class="dashboard-icon">
-              ⭐
-            </div>
-
-            <h2>
-              Special Content
-            </h2>
-
-            <p>
-              Special learning resources and
-              selected content for members.
-            </p>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onclick="alert('Special Content section is being prepared.')"
-            >
-              Explore Content
-            </button>
-
+            <div class="dashboard-icon">⭐</div>
+            <h2>Special Content</h2>
+            <p>Unlock high-tier practical computer training insights and verified account content streams.</p>
+            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: The Special Content hub is currently being prepared.')">Explore Content</button>
           </div>
 
-
-          <!-- DOWNLOADS -->
-
+          <!-- File Distribution Center -->
           <div class="dashboard-card">
+            <div class="dashboard-icon">📥</div>
+            <h2>Downloads</h2>
+            <p>Secure administrative toolkits, template formats, and accounting utility spreadsheets will deploy here.</p>
+            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: The Downloads repository is currently being prepared.')">Open Downloads</button>
+          </div>
 
-            <div class="dashboard-icon">
-              📥
-            </div>
+        </div> <!-- Close Dashboard Grid -->
 
-            <h2>
-              Downloads
-            </h2>
+      </div> <!-- Close Container -->
+    </section>
+  </main>
 
-            <p>
-              Useful documents and downloadable
-              resources will be available here.
-            </p>
+  <!-- =========================================================
+       FOOTER LAYER
+  ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 NK Digital Hub 2030. All Rights Reserved. Managed under Lead System Administration.</p>
+    </div>
+  </footer>
 
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onclick="alert('Downloads section is being prepared.')"
-            >
-              Open Downloads
-            </button>
-
-         
+  <!-- =========================================================
+       CORE CORE RUNTIME SCRIPT HOOKS
+  ========================================================= -->
+  <script type="module" src="App.js"></script>
+</body>
+</html>
