@@ -3,87 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Online Classes - NK Digital Hub"
-  >
-
-  <title>Online Classes | NK Digital Hub</title>
-
+  <meta name="description" content="NK Digital Hub 2030 Academic Portal - Premium online classes, K-12 board material tracks, and tech learning modules.">
+  <title>Online Classes | NK Digital Hub 2030</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
+  <!-- =========================================================
+       NAVIGATION HEADER LAYER
+  ========================================================= -->
   <header class="site-header">
-
     <div class="container nav-container">
-
       <a href="index.html" class="logo">
-        🌟 NK Digital Hub
+        🌟 NK Digital Hub 2030
       </a>
-
       <nav class="nav-menu">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="dashboard.html">
-          Dashboard
-        </a>
-
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="logout()"
-        >
-          Logout
-        </button>
-
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
       </nav>
-
     </div>
-
   </header>
 
-
-  <!-- =====================================================
-       MAIN
-  ====================================================== -->
-
+  <!-- =========================================================
+       CORE ONLINE LEARNING CHANNELS
+  ========================================================= -->
   <main>
-
     <section class="dashboard-section">
-
       <div class="container">
 
-
-        <!-- PAGE INTRO -->
-
+        <!-- Section Introduction Core Header -->
         <div class="dashboard-header">
-
-          <span class="dashboard-badge">
-            🎓 Online Learning
-          </span>
-
-          <h1>
-            Online Classes
-          </h1>
-
-          <p>
-            Explore learning categories available
-            through NK Digital Hub.
-          </p>
-
+          <span class="dashboard-badge">🎓 Virtual Lecture Dashboard</span>
+          <h1>Online Classes</h1>
+          <p>Explore your primary digital learning streams, training channels, and curated coursework assets.</p>
         </div>
 
+        <!-- =========================================================
+             DYNAMIC CLASS CHANNEL SELECTION GRIDS
+        ========================================================= -->
+        <div class="dashboard-grid">
 
-        <!-- =================================================
-             CLASS C
+          <!-- K-12 Syllabus Portal -->
+          <div class="dashboard-card">
+            <div class="dashboard-icon">📚</div>
+            <h2>Classes 1 to 12</h2>
+            <p>Access structured textbook solutions, core board summaries, and foundational syllabus sheets.</p>
+            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: Class 1 to 12 active streams are currently being calibrated.')">Enter Channel</button>
+          </div>
+
+          <!-- Special Science Tracks -->
+          <div class="dashboard-card">
+            <div class="dashboard-icon">🔬</div>
+            <h2>PCB Specialization</h2>
+            <p>Advanced tutorial content focusing on high-tier Physics, Chemistry, and Biology curriculum models.</p>
+            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: PCB video tracks are currently being uploaded.')">Enter Channel</button>
+          </div>
+
+          <!-- Basic Computer Literacy Module -->
+          <div class="dashboard-card">
+            <div class="dashboard-icon">💻</div>
+            <h2>Computer Operations</h2>
+            <p>Master standard administrative setups, basic operating software workflows, and operational file safety.</p>
+            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: Computer baseline training nodes open shortly.')">Enter Channel</button>
+          </div>
+
+          <!-- Automation Software & Accounting -->
+          <div class="dashboard-card">
+            <div class="dashboard-icon">🧾</div>
+            <h2>Tally & Finance Core</h2>
+            <p>Learn practical corporate accounting, ledger creation, and real-time GST reconciliation parameters.</p>
+            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: Tally Prime modules are undergoing server alignment.')">Enter Channel</button>
+          </div>
+
+        </div> <!-- Close Dashboard Grid Layout -->
+
+        <!-- Navigation Control Anchors -->
+        <div class="hero-buttons" style="margin-top: 40px; justify-content: center; display: flex;">
+          <a href="dashboard.html" class="btn btn-primary">← Back to Dashboard</a>
+        </div>
+
+      </div> <!-- Close Container -->
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER LAYER
+  ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 NK Digital Hub 2030. All Rights Reserved. Managed under Lead System Administration.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       CORE RUNTIME PLATFORM SCRIPT HOOKS
+  ========================================================= -->
+  <script type="module" src="App.js"></script>
+</body>
+</html>
