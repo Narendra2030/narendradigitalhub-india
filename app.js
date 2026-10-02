@@ -1,5 +1,10 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+/* =========================================================
+   NK DIGITAL HUB 2030
+   CORE SECURITY & AUTHENTICATION ENGINE (FIREBASE)
+   Version: 4.0.0
+========================================================= */
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -8,11 +13,7 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
-
-/* =========================
-   FIREBASE CONFIG
-========================= */
-
+// Professional Infrastructure Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCIjsySkhok2u7qzFgMHqK9wfULrKgsYvY",
   authDomain: "nk-digital-hub.firebaseapp.com",
@@ -23,21 +24,14 @@ const firebaseConfig = {
   measurementId: "G-SKNYC5BC1H"
 };
 
-
-/* =========================
-   INITIALIZE FIREBASE
-========================= */
-
+// Initialize Application Services
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-
-/* =========================
-   SIGN UP
-========================= */
-
+/**
+ * Handle Secure Platform Registration
+ */
 window.signup = async function () {
-
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const msg = document.getElementById("msg");
@@ -48,56 +42,33 @@ window.signup = async function () {
   const password = passwordInput.value;
 
   if (!email || !password) {
-    if (msg) {
-      msg.textContent = "Please enter email and password.";
-    }
+    if (msg) msg.textContent = "Please enter both email and password.";
     return;
   }
 
   if (password.length < 6) {
-    if (msg) {
-      msg.textContent = "Password must be at least 6 characters.";
-    }
+    if (msg) msg.textContent = "Password security requires at least 6 characters.";
     return;
   }
 
   try {
-
-    if (msg) {
-      msg.textContent = "Creating account...";
-    }
-
-    await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
-    if (msg) {
-      msg.textContent = "Account created successfully!";
-    }
-
+    if (msg) msg.textContent = "Creating your secure account...";
+    await createUserWithEmailAndPassword(auth, email, password);
+    
+    if (msg) msg.textContent = "Account created successfully! Redirecting...";
     setTimeout(() => {
       window.location.href = "dashboard.html";
     }, 800);
-
   } catch (error) {
-
-    console.error("Signup error:", error);
-
-    if (msg) {
-      msg.textContent = getFirebaseError(error);
-    }
+    console.error("Registration Error Context:", error);
+    if (msg) msg.textContent = getFirebaseError(error);
   }
 };
 
-
-/* =========================
-   LOGIN
-========================= */
-
+/**
+ * Handle Secure Platform Authentication Gateway
+ */
 window.login = async function () {
-
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const msg = document.getElementById("msg");
@@ -108,189 +79,104 @@ window.login = async function () {
   const password = passwordInput.value;
 
   if (!email || !password) {
-    if (msg) {
-      msg.textContent = "Please enter email and password.";
-    }
+    if (msg) msg.textContent = "Please enter both email and password.";
     return;
   }
 
   try {
-
-    if (msg) {
-      msg.textContent = "Logging in...";
-    }
-
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
-    if (msg) {
-      msg.textContent = "Login successful!";
-    }
-
+    if (msg) msg.textContent = "Verifying credentials...";
+    await signInWithEmailAndPassword(auth, email, password);
+    
+    if (msg) msg.textContent = "Success! Access granted.";
     setTimeout(() => {
       window.location.href = "dashboard.html";
     }, 500);
-
   } catch (error) {
-
-    console.error("Login error:", error);
-
-    if (msg) {
-      msg.textContent = getFirebaseError(error);
-    }
+    console.error("Authentication Error Context:", error);
+    if (msg) msg.textContent = getFirebaseError(error);
   }
 };
 
-
-/* =========================
-   LOGOUT
-========================= */
-
+/**
+ * Execute Secure Session Terminations
+ */
 async function performLogout() {
-
   try {
-
-    console.log("Logout started...");
-
     await signOut(auth);
-
-    console.log("Firebase logout successful.");
-
     window.location.href = "login.html";
-
   } catch (error) {
-
-    console.error("Logout error:", error);
-
-    alert(
-      "Logout failed. Please check your internet connection and try again."
-    );
+    console.error("Session Termination Error:", error);
+    alert("Unable to safely log out. Please verify your connection status.");
   }
 }
 
-
-/* =========================
-   GLOBAL LOGOUT FUNCTION
-========================= */
-
+// Global Binding for Explicit Interactions
 window.logout = function () {
   performLogout();
 };
 
-
-/* =========================
-   AUTOMATIC LOGOUT BUTTON
-========================= */
-
+/**
+ * Intercept DOM Layout Elements for Logout Directives
+ */
 document.addEventListener("DOMContentLoaded", () => {
-
-  const buttons = document.querySelectorAll("button, a");
-
-  buttons.forEach((button) => {
-
-    const text = button.textContent
-      .trim()
-      .toLowerCase();
-
-    if (text === "logout" || text === "log out") {
-
-      button.addEventListener("click", (event) => {
-
+  const interactionNodes = document.querySelectorAll("button, a");
+  
+  interactionNodes.forEach((node) => {
+    const label = node.textContent.trim().toLowerCase();
+    if (label === "logout" || label === "log out") {
+      node.addEventListener("click", (event) => {
         event.preventDefault();
-
         performLogout();
-
       });
-
     }
-
   });
-
 });
 
-
-/* =========================
-   AUTH STATE
-========================= */
-
+/**
+ * State Authorization Route Guard
+ */
 onAuthStateChanged(auth, (user) => {
+  const pathString = window.location.pathname.toLowerCase();
+  
+  // Array defining secure pages requiring valid sessions
+  const restrictedRoutes = ["dashboard.html", "profile.html", "online-classes.html"];
+  const isRestricted = restrictedRoutes.some(route => pathString.includes(route));
 
-  const currentPage =
-    window.location.pathname
-      .split("/")
-      .pop()
-      .toLowerCase();
-
-  if (
-    currentPage === "dashboard.html" ||
-    currentPage === "profile.html" ||
-    currentPage === "online-classes.html"
-  ) {
-
+  if (isRestricted) {
     if (!user) {
-
       window.location.href = "login.html";
-
       return;
     }
 
-    const userEmail =
-      document.getElementById("userEmail");
-
-    if (userEmail) {
-
-      userEmail.textContent =
-        user.email || "Email not available";
-
+    const targetElement = document.getElementById("userEmail");
+    if (targetElement) {
+      targetElement.textContent = user.email || "Profile Email Unspecified";
     }
-
   }
-
 });
 
-
-/* =========================
-   FIREBASE ERROR MESSAGES
-========================= */
-
+/**
+ * Translate System Error Codes to Human Language
+ */
 function getFirebaseError(error) {
-
   switch (error.code) {
-
     case "auth/email-already-in-use":
-      return "This email is already registered.";
-
+      return "This email address is already registered.";
     case "auth/invalid-email":
-      return "Please enter a valid email address.";
-
+      return "Please input a structurally valid email address.";
     case "auth/weak-password":
-      return "Password is too weak. Use at least 6 characters.";
-
+      return "Password criteria failed. Minimum 6 characters required.";
     case "auth/user-not-found":
-      return "No account found with this email.";
-
     case "auth/wrong-password":
-      return "Incorrect password.";
-
     case "auth/invalid-credential":
-      return "Invalid email or password.";
-
+      return "Invalid email credentials or verification matching failed.";
     case "auth/too-many-requests":
-      return "Too many attempts. Please try again later.";
-
+      return "Security Block: Too many attempts. Try again later.";
     case "auth/network-request-failed":
-      return "Network error. Please check your internet connection.";
-
+      return "Network interruption detected. Check your internet connection.";
     case "auth/operation-not-allowed":
-      return "Email/password authentication is not enabled.";
-
+      return "System configuration error: Authentication providers disabled.";
     default:
-      return (
-        error.message ||
-        "Something went wrong. Please try again."
-      );
+      return error.message || "An unexpected infrastructure error occurred.";
   }
 }
