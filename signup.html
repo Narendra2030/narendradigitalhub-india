@@ -3,187 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Create your NK Digital Hub account."
-  >
-
+  <meta name="description" content="Provision a secure new member account profile layer inside the NK Digital Hub 2030 network ecosystem to access premium dashboards.">
   <meta name="author" content="Narendra Kumar">
-
-  <title>Create Account | NK Digital Hub</title>
-
+  <title>Create Account | NK Digital Hub 2030</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
+  <!-- =========================================================
+       NAVIGATION HEADER LAYER
+  ========================================================= -->
   <header class="site-header">
-
     <div class="container nav-container">
-
       <a href="index.html" class="logo">
-        🌟 NK Digital Hub
+        🌟 NK Digital Hub 2030
       </a>
-
       <nav class="nav-menu">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="login.html">
-          Login
-        </a>
-
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
       </nav>
-
     </div>
-
   </header>
 
-
-  <!-- =====================================================
-       SIGN UP
-  ====================================================== -->
-
+  <!-- =========================================================
+       SECURE MEMBER REGISTRATION INTERFACE
+  ========================================================= -->
   <main>
-
     <section class="auth-section">
-
       <div class="auth-card">
+        
+        <div class="auth-icon">👤</div>
+        <h1>Create Account</h1>
+        <p class="auth-subtitle">Provision your secure member account profile to unlock our premium tools and course channels.</p>
 
+        <!-- SECURE REGISTRATION FORM INTERACTION -->
+        <form onsubmit="event.preventDefault(); signup();">
 
-        <div class="auth-icon">
-          👤
-        </div>
-
-
-        <h1>
-          Create Account
-        </h1>
-
-
-        <p class="auth-subtitle">
-          Create your NK Digital Hub account to access
-          member features.
-        </p>
-
-
-        <!-- SIGN UP FORM -->
-
-        <form
-          onsubmit="event.preventDefault(); signup();"
-        >
-
-
-          <!-- EMAIL -->
-
+          <!-- Email Input Module Field -->
           <div class="form-group">
-
-            <label for="email">
-              Email Address
-            </label>
-
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              autocomplete="email"
+            <label for="email">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="name@example.com" 
+              autocomplete="email" 
               required
             >
-
           </div>
 
-
-          <!-- PASSWORD -->
-
+          <!-- Password Creation Module Field -->
           <div class="form-group">
-
-            <label for="password">
-              Password
-            </label>
-
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Create a password"
-              minlength="6"
-              autocomplete="new-password"
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder="Create a strong password" 
+              minlength="6" 
+              autocomplete="new-password" 
               required
             >
-
           </div>
 
-
-          <!-- CREATE ACCOUNT BUTTON -->
-
-          <button
-            type="submit"
-            class="btn btn-primary auth-button"
-          >
-            Create Account
+          <!-- Security Submission Core Trigger Button -->
+          <button type="submit" class="btn btn-primary auth-button">
+            Initialize Profile
           </button>
 
-
-          <!-- MESSAGE -->
-
-          <p
-            id="msg"
-            class="auth-message"
-            aria-live="polite"
-          ></p>
-
+          <!-- System Status Notification Live Output Box -->
+          <p id="msg" class="auth-message" aria-live="polite"></p>
 
         </form>
 
-
-        <!-- AUTH FOOTER -->
-
+        <!-- PORTAL BASE REDIRECTION CONTROL LINKS -->
         <div class="auth-footer">
-
-
-          <p>
-            Already have an account?
-            <a href="login.html">
-              Login
-            </a>
-          </p>
-
-
-          <p>
-            <a href="index.html">
-              ← Back to Home
-            </a>
-          </p>
-
-
+          <p>Already have an account? <a href="login.html">Login</a></p>
+          <p><a href="index.html">← Back to Home</a></p>
         </div>
 
-
       </div>
-
     </section>
-
   </main>
 
+  <!-- =========================================================
+       FOOTER INFRASTRUCTURE LAYER
+  ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 NK Digital Hub 2030. All Rights Reserved. Managed under Lead System Administration.</p>
+    </div>
+  </footer>
 
-  <!-- =====================================================
-       FIREBASE APP
-  ====================================================== -->
-
-  <script
-    type="module"
-    src="app.js"
-  ></script>
-
-
+  <!-- =========================================================
+       CORE RUNTIME PLATFORM SCRIPT HOOKS
+  ========================================================= -->
+  <script type="module" src="App.js"></script>
 </body>
 </html>
