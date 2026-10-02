@@ -5,28 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="NK Digital Hub 2030 Member Dashboard - Secure account profile workspace and direct educational resource gateways.">
   <title>Dashboard | NK Digital Hub 2030</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- PREMIUM INTEGRATED UI THEME (Embedded CSS) -->
+  <style>
+    :root {
+      --primary-color: #06264d;
+      --secondary-color: #0877c9;
+      --dark-accent: #123b68;
+      --text-main: #172033;
+      --text-muted: #64778e;
+      --bg-main: #eef3f9;
+      --border-color: #cbdced;
+      --transition-smooth: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+      color: var(--text-main);
+      background: var(--bg-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; border: none; background: none; }
+    .container { width: min(1180px, 92%); margin: 0 auto; }
+
+    /* Modern Glass Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 9999;
+      background: linear-gradient(135deg, #ffffff, #f4f8ff);
+      border-bottom: 1px solid #d7e2f0; box-shadow: 0 5px 22px rgba(15, 45, 80, 0.08);
+    }
+
+    .nav-container { min-height: 74px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
+    .logo { color: var(--primary-color); font-size: 21px; font-weight: 800; letter-spacing: -0.4px; }
+    .nav-menu { display: flex; gap: 15px; align-items: center; }
+    .nav-menu a { color: #344b68; font-size: 14px; font-weight: 700; padding: 9px 12px; border-radius: 8px; transition: all var(--transition-smooth); }
+    .nav-menu a:hover { background: #edf5ff; color: var(--secondary-color); }
+
+    /* Premium Header Button */
+    .btn-logout {
+      color: #ffffff; background: linear-gradient(135deg, #d93838, #b51c1c);
+      font-size: 14px; font-weight: 700; padding: 9px 16px; border-radius: 8px; cursor: pointer;
+      box-shadow: 0 4px 10px rgba(217, 56, 56, 0.2); transition: all var(--transition-smooth);
+    }
+    .btn-logout:hover { transform: translateY(-1px); box-shadow: 0 6px 15px rgba(217, 56, 56, 0.35); }
+
+    .dashboard-section { padding: 60px 0; min-height: calc(100vh - 74px); background: #f0f4f9; }
+
+    /* Dashboard Header Banner */
+    .dashboard-header {
+      max-width: 800px; margin: 0 auto 45px; padding: 35px; text-align: center;
+      background: #ffffff; border: 1px solid var(--border-color); border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(22, 57, 91, 0.05);
+    }
+
+    .dashboard-badge {
+      display: inline-flex; padding: 6px 14px; margin-bottom: 15px; border-radius: 999px;
+      background: #e8f5ff; border: 1px solid #c5e3f7; color: #0868ae; font-size: 13px; font-weight: 800;
+    }
+
+    .dashboard-header h1 { margin-bottom: 12px; color: var(--dark-accent); font-size: clamp(28px, 4vw, 36px); font-weight: 800; }
+    .dashboard-header p { color: var(--text-muted); font-size: 15px; margin-bottom: 5px; }
+    .dashboard-header strong { color: var(--secondary-color); word-break: break-word; }
+
+    /* Grid System for Workspace Cards */
+    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; margin-bottom: 40px; }
+    
+    .dashboard-card {
+      display: flex; flex-direction: column; align-items: flex-start; padding: 30px;
+      background: #ffffff; border: 1px solid var(--border-color); border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(22, 57, 91, 0.04); transition: all var(--transition-smooth);
+    }
+    .dashboard-card:hover { transform: translateY(-5px); border-color: #8fc6eb; box-shadow: 0 15px 35px rgba(22, 57, 91, 0.1); }
+
+    .dashboard-icon {
+      width: 55px; height: 55px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px; border-radius: 14px;
+      background: linear-gradient(135deg, #e3f4ff, #eceaff); border: 1px solid #c8dff3; font-size: 26px;
+    }
+
+    .dashboard-card h2 { margin-bottom: 10px; color: var(--dark-accent); font-size: 20px; font-weight: 700; }
+    .dashboard-card p { flex: 1; margin-bottom: 20px; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+
+    /* Action Buttons inside Cards */
+    .btn-action {
+      min-height: 40px; padding: 8px 18px; display: inline-flex; align-items: center; justify-content: center;
+      color: #0b4e91; background: #ffffff; border: 1px solid #bcd4ed; border-radius: 8px;
+      font-size: 14px; font-weight: 700; cursor: pointer; transition: all var(--transition-smooth); width: 100%;
+    }
+    .btn-action:hover { color: #06457f; background: #edf7ff; border-color: #78b9e9; }
+
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; padding: 12px 0; gap: 10px; }
+      .dashboard-header { padding: 25px 20px; }
+      .dashboard-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- =========================================================
-       NAVIGATION HEADER LAYER
-  ========================================================= -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        🌟 NK Digital Hub 2030
-      </a>
+      <a href="index.html" class="logo">🌟 NK Digital Hub 2030</a>
       <nav class="nav-menu">
         <a href="index.html">Home</a>
-        <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
+        <button type="button" class="btn-logout" onclick="logout()">Logout</button>
       </nav>
     </div>
   </header>
 
-  <!-- =========================================================
-       CORE USER DASHBOARD INTERFACE
-  ========================================================= -->
   <main>
     <section class="dashboard-section">
       <div class="container">
@@ -39,9 +129,7 @@
           <p>Session Identity: <strong id="userEmail">Synchronizing...</strong></p>
         </div>
 
-        <!-- =========================================================
-             DYNAMIC USER WORKSPACE INTERACTION GRIDS
-        ========================================================= -->
+        <!-- Dashboard Grid Modules -->
         <div class="dashboard-grid">
 
           
@@ -49,7 +137,7 @@
             <div class="dashboard-icon">👤</div>
             <h2>My Profile</h2>
             <p>Access and review your current structural account details, registered parameters, and notification endpoints.</p>
-            <a href="profile.html" class="btn btn-secondary">Open Profile</a>
+            <a href="profile.html" class="btn-action" style="text-align: center;">Open Profile</a>
           </div>
 
           <!-- Academic Portals -->
@@ -57,7 +145,7 @@
             <div class="dashboard-icon">🎓</div>
             <h2>Online Classes</h2>
             <p>Explore your primary digital learning streams, active lecture resources, and curriculum files.</p>
-            <a href="online-classes.html" class="btn btn-secondary">Open Classes</a>
+            <a href="online-classes.html" class="btn-action" style="text-align: center;">Open Classes</a>
           </div>
 
           <!-- Academic Study Material Core -->
@@ -65,15 +153,15 @@
             <div class="dashboard-icon">📚</div>
             <h2>Study Material</h2>
             <p>Curated revision templates, subject reference files, and structured syllabus matrices are being organized here.</p>
-            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: The Study Material catalog is currently being prepared.')">Study Material</button>
+            <button type="button" class="btn-action" onclick="alert('System Notice: The Study Material catalog is currently being prepared.')">Study Material</button>
           </div>
 
-          <!-- Premium Premium Features -->
+          <!-- Premium Special Features -->
           <div class="dashboard-card">
             <div class="dashboard-icon">⭐</div>
             <h2>Special Content</h2>
             <p>Unlock high-tier practical computer training insights and verified account content streams.</p>
-            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: The Special Content hub is currently being prepared.')">Explore Content</button>
+            <button type="button" class="btn-action" onclick="alert('System Notice: The Special Content hub is currently being prepared.')">Explore Content</button>
           </div>
 
           <!-- File Distribution Center -->
@@ -81,27 +169,21 @@
             <div class="dashboard-icon">📥</div>
             <h2>Downloads</h2>
             <p>Secure administrative toolkits, template formats, and accounting utility spreadsheets will deploy here.</p>
-            <button type="button" class="btn btn-secondary" onclick="alert('System Notice: The Downloads repository is currently being prepared.')">Open Downloads</button>
+            <button type="button" class="btn-action" onclick="alert('System Notice: The Downloads repository is currently being prepared.')">Open Downloads</button>
           </div>
 
-        </div> <!-- Close Dashboard Grid -->
+        </div> <!-- Close Grid -->
 
       </div> <!-- Close Container -->
     </section>
   </main>
 
-  <!-- =========================================================
-       FOOTER LAYER
-  ========================================================= -->
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2026 NK Digital Hub 2030. All Rights Reserved. Managed under Lead System Administration.</p>
     </div>
   </footer>
 
-  <!-- =========================================================
-       CORE CORE RUNTIME SCRIPT HOOKS
-  ========================================================= -->
   <script type="module" src="App.js"></script>
 </body>
 </html>
