@@ -7,7 +7,7 @@
   <meta name="author" content="Narendra Kumar">
   <title>NK Digital Hub 2030 | Narendra Kumar</title>
   
-  <!-- EMBEDDED SYSTEM BLUEPRINT CSS (No External File Needed) -->
+  <!-- EMBEDDED SYSTEM BLUEPRINT CSS -->
   <style>
     :root {
       --primary-color: #06264d;
@@ -181,44 +181,62 @@
     .section-heading h2 { margin-bottom: 12px; color: #12345c; font-size: clamp(30px, 5vw, 44px); line-height: 1.15; letter-spacing: -1px; }
     .section-heading p { color: #657891; font-size: 16px; }
 
-    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-    .info-card {
-      position: relative; padding: 27px 23px; background: linear-gradient(145deg, #ffffff, #f5faff);
-      border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 7px 25px rgba(22, 57, 91, 0.07);
-      overflow: hidden; transition: all var(--transition-smooth);
+    /* AI Notes Section Styles Custom Integration */
+    .notes-input-wrapper {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
     }
-    .info-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--secondary-color), #38bdf8, #635bff); }
-    .info-card:hover { transform: translateY(-6px); border-color: #8ec4eb; box-shadow: 0 15px 35px rgba(22, 57, 91, 0.13); }
-    .info-card h3 { margin-bottom: 12px; color: #154d82; font-size: 18px; }
-    .info-card p { color: var(--text-muted); font-size: 14px; }
-
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
-    .feature-card {
-      position: relative; display: flex; flex-direction: column; min-height: 245px; padding: 29px;
-      background: linear-gradient(145deg, #ffffff, #f7fbff); border: 1px solid var(--border-color);
-      border-radius: 16px; box-shadow: 0 8px 28px rgba(22, 57, 91, 0.07); overflow: hidden; transition: all var(--transition-smooth);
+    .notes-input {
+      flex: 1;
+      min-width: 280px;
+      padding: 14px 18px;
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      background: #ffffff;
+      color: var(--text-main);
+      transition: border-color var(--transition-smooth);
     }
-    .feature-card::before { content: ""; position: absolute; left: 0; top: 0; width: 5px; height: 100%; background: linear-gradient(180deg, var(--secondary-color), #635bff); }
-    .feature-card:hover { transform: translateY(-7px); border-color: #8fc6eb; box-shadow: 0 18px 42px rgba(22, 57, 91, 0.14); }
+    .notes-input:focus { border-color: var(--secondary-color); }
     
-    .card-icon { width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; border-radius: 14px; background: linear-gradient(135deg, #e4f4ff, #edf0ff); border: 1px solid #c5ddf3; font-size: 26px; }
-    .feature-card h3 { margin-bottom: 9px; color: var(--dark-accent); font-size: 19px; }
-    .feature-card p { flex: 1; color: var(--text-muted); font-size: 14px; line-height: 1.7; }
-    .feature-card .btn { align-self: flex-start; margin-top: 20px; }
+    .loader-spinner {
+      border: 4px solid #eef3f9;
+      border-top: 4px solid var(--secondary-color);
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 12px auto;
+    }
+    
+    .notes-result-box {
+      display: none;
+      text-align: left;
+      margin-top: 35px;
+      padding: 30px;
+      background: #ffffff;
+      border-left: 5px solid var(--secondary-color);
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+      max-height: 550px;
+      overflow-y: auto;
+    }
 
-    .member-section { text-align: center; background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15), transparent 30%), linear-gradient(135deg, var(--primary-color), #0a477a, #172b70); color: #ffffff; }
-    .member-section .section-heading h2 { color: #ffffff; }
-    .member-section .section-heading > span { color: #d7f4ff; background: rgba(255, 255, 255, 0.09); border-color: rgba(255, 255, 255, 0.20); }
-    .member-section .section-heading p { color: #c6d9eb; }
-
-    .site-footer { padding: 30px 20px; background: linear-gradient(135deg, #06172d, #0b3156); color: #b7c9da; text-align: center; border-top: 4px solid var(--secondary-color); }
-    .site-footer p { margin: 5px 0; font-size: 13px; }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 
     @media (max-width: 768px) {
       .nav-container { flex-direction: column; padding: 15px 0; gap: 15px; }
       .nav-menu { justify-content: center; width: 100%; }
       .hero-text h1 { font-size: 46px; }
       .hero-buttons { justify-content: center; }
+      .notes-input-wrapper { flex-direction: column; }
+      .notes-input-wrapper .btn { width: 100%; }
     }
   </style>
 </head>
@@ -230,6 +248,7 @@
       <nav class="nav-menu">
         <a href="index.html">Home</a>
         <a href="#about">About</a>
+        <a href="#youtube-notes">AI Notes</a>
         <a href="#skills">Skills</a>
         <a href="#learning">Learning</a>
         <a href="#services">Services</a>
@@ -243,6 +262,7 @@
   </header>
 
   <main>
+    <!-- HOME HERO SECTION -->
     <section id="home" class="hero-section">
       <div class="container hero-content">
         <div class="hero-text">
@@ -257,6 +277,27 @@
       </div>
     </section>
 
-    <section id="about" class="content-section">
+    <!-- NEW SECTION: AI YOUTUBE NOTES GENERATOR -->
+    <section id="youtube-notes" class="content-section" style="background: linear-gradient(180deg, #eef3f9 0%, #ffffff 100%);">
       <div class="container">
         <div class="section-heading">
+          <span>AI Intelligent Module</span>
+          <h2>AI YouTube Notes Generator</h2>
+          <p>किसी भी यूट्यूब वीडियो का लिंक पेस्ट करें और सिर्फ 1-क्लिक में बेहतरीन AI स्टडी नोट्स प्राप्त करें।</p>
+        </div>
+
+        <div style="max-width: 850px; margin: 0 auto; background: #ffffff; padding: 35px; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(22, 57, 91, 0.05);">
+          
+          <div class="notes-input-wrapper">
+            <input type="text" id="ytUrlInput" class="notes-input" placeholder="यहाँ YouTube वीडियो का लिंक डालें (उदा. https://youtube.com...)">
+            <button onclick="generateVideoNotes()" id="genNotesBtn" class="btn btn-primary">नोट्स जनरेट करें</button>
+          </div>
+
+          <!-- Loading Spinner -->
+          <div id="notesLoader" style="display: none; margin: 30px 0; text-align: center;">
+            <div class="loader-spinner"></div>
+            <p style="color: var(--primary-color); font-weight: 600;">NK Digital Hub AI वीडियो से नोट्स तैयार कर रहा है... कृपया 15-20 सेकंड प्रतीक्षा करें।</p>
+          </div>
+
+          <!-- Output Box -->
+          <div id="notesResultBox" class="notes-result-box">
